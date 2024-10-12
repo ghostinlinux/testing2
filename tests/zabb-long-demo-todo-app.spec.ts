@@ -62,7 +62,7 @@ test.describe("New Todo", () => {
     page,
   }) => {
     // Create 3 items.
-    await page.waitForTimeout(420000);
+    await page.waitForTimeout(1);
 
     await createDefaultTodos(page);
 
@@ -111,7 +111,7 @@ test.describe("Mark all as completed", () => {
   test("long should abbzlong allow me to clear the complete state of all items", async ({
     page,
   }) => {
-    await page.waitForTimeout(300000);
+    await page.waitForTimeout(1);
 
     const toggleAll = page.getByLabel("Mark all as complete");
     // Check and then immediately uncheck.

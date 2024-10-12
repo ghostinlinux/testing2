@@ -45,7 +45,7 @@ test.describe("New Todo", () => {
     page,
   }) => {
     // create a new todo locator
-    await page.waitForTimeout(420000);
+    await page.waitForTimeout(1);
 
     const newTodo = page.getByPlaceholder("What needs to be done?");
 

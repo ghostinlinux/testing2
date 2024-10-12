@@ -18,7 +18,7 @@ const TODO_ITEMS = [
 test.describe("New Todo", () => {
   test("llong should abblong allow me to add todo items", async ({ page }) => {
     // create a new todo locator
-    await page.waitForTimeout(600000);
+    await page.waitForTimeout(1);
     const newTodo = page.getByPlaceholder("What needs to be done?");
 
     // Create 1st todo.

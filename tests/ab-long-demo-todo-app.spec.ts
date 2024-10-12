@@ -430,7 +430,7 @@ test.describe("Routing", () => {
   });
 
   test("long should ablong respect the back button", async ({ page }) => {
-    await page.waitForTimeout(300000);
+    await page.waitForTimeout(1);
 
     const todoItem = page.getByTestId("todo-item");
     await page.getByTestId("todo-item").nth(1).getByRole("checkbox").check();
