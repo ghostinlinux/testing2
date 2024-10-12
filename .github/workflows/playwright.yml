@@ -134,6 +134,8 @@ jobs:
     - name: Get test names
       id: getTestNames
       run: |
+        test_names=$(node -e 'import("sharding-pk-play").then(module => console.log(module.orchestrateTestsForShard(${{ matrix.shardIndex }}))).catch(err => console.error(err))')
+
         test_names=$(node -e 'require("sharding-pk-play").orchestrateTestsForShard(${{ matrix.shardIndex }})')
         echo "::set-output name=test_names::$test_names"
     - name: Run Playwright tests
