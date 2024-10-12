@@ -1,0 +1,11 @@
+{
+  "type": "module",
+  "dependencies": {
+    "sharding-pk-play": "^1.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "@types/node": "^22.7.5"
+  },
+  "scripts": {}
+}
