@@ -1,5 +1,5 @@
 import { test, expect, type Page } from "@playwright/test";
-import { measureExecutionTime } from "../utils/measure-execution-time";
+import { measureExecutionTime } from "sharding-pk-play";
 
 test.beforeEach(async ({ page }, testInfo) => {
   await page.goto("https://demo.playwright.dev/todomvc");
