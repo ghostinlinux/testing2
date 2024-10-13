@@ -31,6 +31,37 @@ jobs:
         echo "shardIndexArray=$shardIndexArray" >> $GITHUB_ENV
         echo "::set-output name=shardIndexArray::$shardIndexArray"
 
+  combine_test_execution_result:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - run: |
+        if [[ -f test_execuction_results.json ]]; then
+            rm test_execuction_results.json
+        fi 
+    - name: Download JSON Files
+      run: |
+        for i in $(seq 1 ${{ github.event.inputs.shardTotal }}); do
+          echo "Downloading test_execuction_results_$i.json"
+          actions/download-artifact@v4 --name test_execuction_results_$i --path .
+        done
+    - uses: sergeysova/jq-action@v2
+      with:
+        cmd: jq -s '[.[][]]' test_execuction_results_*.json > test_execuction_results.json
+    - run: rm test_execuction_results_*.json  
+    - uses: actions/upload-artifact@v4
+      with:
+        name: test_execuction_results
+        path: test_execuction_results.json              
+    - name: Commit Json File
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+         commit_message: 'Update Execution Time file'
+         file_pattern: "*.json"
+
   measure_execution:
     timeout-minutes: 60
     runs-on: ubuntu-latest
@@ -61,35 +92,4 @@ jobs:
         name: test_execuction_results_${{ matrix.shardIndex }}
         path: test_execuction_results_${{ matrix.shardIndex }}.json
 
-  combine_test_execution_result:
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
-    needs:
-      - measure_execution
-    steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - run: |
-        if [[ -f test_execuction_results.json ]]; then
-            rm test_execuction_results.json
-        fi 
-    - name: Download JSON Files
-      run: |
-        for i in $(seq 1 ${{ github.event.inputs.shardTotal }}); do
-          echo "Downloading test_execuction_results_$i.json"
-          actions/download-artifact@v4 --name test_execuction_results_$i --path .
-        done
-    - uses: sergeysova/jq-action@v2
-      with:
-        cmd: jq -s '[.[][]]' test_execuction_results_*.json > test_execuction_results.json
-    - run: rm test_execuction_results_*.json  
-    - uses: actions/upload-artifact@v4
-      with:
-        name: test_execuction_results
-        path: test_execuction_results.json              
-    - name: Commit Json File
-      uses: stefanzweifel/git-auto-commit-action@v5
-      with:
-         commit_message: 'Update Execution Time file'
-         file_pattern: "*.json"
+  
