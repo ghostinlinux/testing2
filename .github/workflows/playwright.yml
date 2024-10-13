@@ -103,7 +103,6 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - check_existing_test_execution_result
-      - combine_test_execution_result
     if: ${{ inputs.run_measure_execution == 'yes' || needs.check_existing_test_execution_result.outputs.has_test_execution_result == 'true' }}
     strategy:
       fail-fast: false
