@@ -18,19 +18,18 @@ on:
         description: 'Shard Total'
         required: true
         default: 8
-
 jobs:
   set_variables:
     runs-on: ubuntu-latest
     outputs:
       shardIndexArray: ${{ steps.set_vars.outputs.shardIndexArray }}
     steps:
-      - name: Set shardIndex array
-        id: set_vars
-        run: |
-          shardIndexArray='["'${{ github.event.inputs.shardIndex }}'"]'
-          shardIndexArray=$(echo $shardIndexArray | sed 's/,/","/g')
-          echo "shardIndexArray=$shardIndexArray" >> $GITHUB_OUTPUT
+    - name: Set shardIndex array
+      id: set_vars
+      run: |
+        shardIndexArray=$(echo '["'${{ github.event.inputs.shardIndex }}'"]' | sed 's/,/","/g')
+        echo "shardIndexArray=$shardIndexArray" >> $GITHUB_ENV
+        echo "::set-output name=shardIndexArray::$shardIndexArray"
 
   measure_execution:
     timeout-minutes: 60
@@ -41,26 +40,26 @@ jobs:
       matrix:
         shardIndex: ${{ fromJson(needs.set_variables.outputs.shardIndexArray) }}
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  
-      - name: Set shardIndex environment variable
-        run: echo 'SHARD_INDEX=${{ matrix.shardIndex }}' >> $GITHUB_ENV          
-      - uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-      - name: Install dependencies
-        run: npm install
-      - name: Install Playwright Browsers
-        run: npx playwright install
-      - name: Run Playwright tests
-        run: |
-          MEASURE_EXECUTION_TIME=true npx playwright test --shard=${{ matrix.shardIndex }}/${{ github.event.inputs.shardTotal }} --repeat-each=1
-      - name: Upload JSON File
-        uses: actions/upload-artifact@v4
-        with:
-          name: test_execuction_results_${{ matrix.shardIndex }}
-          path: test_execuction_results_${{ matrix.shardIndex }}.json
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  
+    - name: Set shardIndex environment variable
+      run: echo 'SHARD_INDEX=${{ matrix.shardIndex }}' >> $GITHUB_ENV          
+    - uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+    - name: Install dependencies
+      run: npm install
+    - name: Install Playwright Browsers
+      run: npx playwright install
+    - name: Run Playwright tests
+      run: |
+        MEASURE_EXECUTION_TIME=true npx playwright test --shard=${{ matrix.shardIndex }}/${{ github.event.inputs.shardTotal }} --repeat-each=1
+    - name: Upload JSON File
+      uses: actions/upload-artifact@v4
+      with:
+        name: test_execuction_results_${{ matrix.shardIndex }}
+        path: test_execuction_results_${{ matrix.shardIndex }}.json
 
   combine_test_execution_result:
     timeout-minutes: 60
@@ -68,36 +67,38 @@ jobs:
     needs:
       - measure_execution
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - run: |
-          if [[ -f test_execuction_results.json ]]; then
-              rm test_execuction_results.json
-          fi 
-      - name: Set shardIndexArray environment variable
-        run: |
-          echo "shardIndexArray=${{ needs.set_variables.outputs.shardIndexArray }}" >> $GITHUB_ENV
-      - uses: actions/download-artifact@v4
-        with:
-          name: test_execuction_results
-          path: artifacts
-      - name: Move JSON Files to Artifacts Directory
-        run: |
-          shardIndexArray=(${shardIndexArray//[\",]/ })
-          for i in "${shardIndexArray[@]}"; do
-            echo "Moving test_execuction_results_$i.json to artifacts/"
-            mv artifacts/test_execuction_results_$i.json artifacts/
-          done
-      - run: |
-          jq -s '[.[][]]' artifacts/test_execuction_results_*.json > test_execuction_results.json
-      - run: rm artifacts/test_execuction_results_*.json  
-      - uses: actions/upload-artifact@v4
-        with:
-          name: test_execuction_results
-          path: test_execuction_results.json              
-      - name: Commit Json File
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-           commit_message: 'Update Execution Time file'
-           file_pattern: "*.json"
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - run: |
+        if [[ -f test_execuction_results.json ]]; then
+            rm test_execuction_results.json
+        fi 
+    - name: Set shardIndexArray environment variable
+      run: |
+        shardIndexArray=$(echo '["'${{ github.event.inputs.shardIndex }}'"]' | sed 's/,/","/g')
+        echo "shardIndexArray=$shardIndexArray" >> $GITHUB_ENV
+    - name: Download JSON Files
+      run: |
+        shardIndexArray=${{ fromJson(env.shardIndexArray) }}
+        mkdir -p artifacts
+        for i in ${shardIndexArray[@]}; do
+          echo "Downloading test_execuction_results_$i.json"
+          mv test_execuction_results_$i.json artifacts/
+        done
+    - uses: actions/download-artifact@v4
+      with:
+        name: test_execuction_results
+        path: artifacts
+    - run: |
+        jq -s '[.[][]]' artifacts/test_execuction_results_*.json > test_execuction_results.json
+    - run: rm artifacts/test_execuction_results_*.json  
+    - uses: actions/upload-artifact@v4
+      with:
+        name: test_execuction_results
+        path: test_execuction_results.json              
+    - name: Commit Json File
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+         commit_message: 'Update Execution Time file'
+         file_pattern: "*.json"
