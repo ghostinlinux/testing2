@@ -1,4 +1,3 @@
-name: Measure Test Execution Time
 on:
   push:
     branches: [ main ]
@@ -9,6 +8,15 @@ on:
     paths:
       - 'tests/**'
   workflow_dispatch:
+    inputs:
+      shardIndex:
+        description: 'Shard Index (comma-separated values)'
+        required: true
+        default: '1,2,3,4,5,6,7,8'
+      shardTotal:
+        description: 'Shard Total'
+        required: true
+        default: 8
 jobs:
   measure_execution:
     timeout-minutes: 60
@@ -16,8 +24,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shardIndex: [1, 2, 3,4,5,6,7,8]
-        shardTotal: [8]
+        shardIndex: ${{ fromJson('["' + github.event.inputs.shardIndex.replace(',', '","') + '"]') }}
     steps:
     - uses: actions/checkout@v4
       with:
@@ -33,7 +40,7 @@ jobs:
       run: npx playwright install
     - name: Run Playwright tests
       run: |
-        MEASURE_EXECUTION_TIME=true npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }} --repeat-each=1
+        MEASURE_EXECUTION_TIME=true npx playwright test --shard=${{ matrix.shardIndex }}/${{ github.event.inputs.shardTotal }} --repeat-each=1
     - name: Upload JSON File
       uses: actions/upload-artifact@v4
       with:
@@ -52,46 +59,17 @@ jobs:
         if [[ -f test_execuction_results.json ]]; then
             rm test_execuction_results.json
         fi 
-    - name: Download JSON File1
-      uses: actions/download-artifact@v4
-      with:
-        name: test_execuction_results_1
-        path: .  
-    - name: Download JSON File 2
-      uses: actions/download-artifact@v4
-      with:
-        name: test_execuction_results_2
-        path: .
-    - name: Download JSON File 3
-      uses: actions/download-artifact@v4
-      with:
-        name: test_execuction_results_3
-        path: .
-    - name: Download JSON File 4
-      uses: actions/download-artifact@v4
-      with:
-        name: test_execuction_results_4
-        path: .
-    - name: Download JSON File 5
-      uses: actions/download-artifact@v4
-      with:
-        name: test_execuction_results_5
-        path: .
-    - name: Download JSON File 6
-      uses: actions/download-artifact@v4
-      with:
-        name: test_execuction_results_6
-        path: .
-    - name: Download JSON File 7
-      uses: actions/download-artifact@v4
-      with:
-        name: test_execuction_results_7
-        path: .
-    - name: Download JSON File 8
-      uses: actions/download-artifact@v4
-      with:
-        name: test_execuction_results_8
-        path: .
+    - name: Download JSON Files
+      run: |
+        shardTotal=${{ github.event.inputs.shardTotal }}
+        shardIndexArray=(${{ fromJson('["' + github.event.inputs.shardIndex.replace(',', '","') + '"]') }})
+        for i in "${shardIndexArray[@]}"; do
+          echo "Downloading test_execuction_results_$i.json"
+          gh api -H "Accept: application/vnd.github.v3+json" \
+            /repos/${{ github.repository }}/actions/artifacts \
+            | jq -r ".artifacts[] | select(.name == \"test_execuction_results_$i\") | .archive_download_url" \
+            | xargs -n 1 curl -L -o test_execuction_results_$i.json
+        done
     - uses: sergeysova/jq-action@v2
       with:
         cmd: jq -s '[.[][]]' test_execuction_results_*.json > test_execuction_results.json
@@ -104,4 +82,4 @@ jobs:
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
          commit_message: 'Update Execution Time file'
-         file_pattern: "*.json"   
+         file_pattern: "*.json"
