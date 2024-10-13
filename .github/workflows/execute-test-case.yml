@@ -1,22 +1,44 @@
-name: Exeute Test Case
+name: Execute Test Case
 on:
   workflow_dispatch:
+    inputs:
+      shardIndex:
+        description: 'Shard Index (comma-separated values)'
+        required: true
+        default: '1,2,3'
+      shardTotal:
+        description: 'Total number of shards'
+        required: true
+        default: 3
+
 jobs:
+  set_variables:
+    runs-on: ubuntu-latest
+    outputs:
+      shardIndexArray: ${{ steps.set_vars.outputs.shardIndexArray }}
+    steps:
+    - name: Set shardIndex array
+      id: set_vars
+      run: |
+        shardIndexArray=$(echo '["'${{ github.event.inputs.shardIndex }}'"]' | sed 's/,/","/g')
+        echo "shardIndexArray=$shardIndexArray" >> $GITHUB_ENV
+        echo "::set-output name=shardIndexArray::$shardIndexArray"
+
   test_smart_orchestration:
+    needs: set_variables
     timeout-minutes: 60
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        shardIndex: [1, 2, 3]
-        shardTotal: [3]
+        shardIndex: ${{ fromJson(needs.set_variables.outputs.shardIndexArray) }}
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
     - name: Set shardTotal environment variable
-      run: echo "SHARD_TOTAL=${{ matrix.shardTotal }}" >> $GITHUB_ENV     
+      run: echo "SHARD_TOTAL=${{ github.event.inputs.shardTotal }}" >> $GITHUB_ENV     
     - name: Install dependencies
       run: npm install
     - name: Install Playwright Browsers
@@ -28,28 +50,27 @@ jobs:
         echo "::set-output name=test_names::$test_names"
     - name: Run Playwright tests
       run: |
-          npx playwright test --grep "${{ steps.getTestNames.outputs.test_names }}"
-  test_no_orcestration:
-    needs:
-      - test_smart_orchestration
+        npx playwright test --grep "${{ steps.getTestNames.outputs.test_names }}"
+
+  test_no_orchestration:
+    needs: test_smart_orchestration
     timeout-minutes: 60
     runs-on: ubuntu-latest
     strategy:
-        fail-fast: false
-        matrix:
-          shardIndex: [1, 2, 3]
-          shardTotal: [3]
+      fail-fast: false
+      matrix:
+        shardIndex: ${{ fromJson(needs.set_variables.outputs.shardIndexArray) }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-      - name: Set shardTotal environment variable
-        run: echo "shardTotal=${{ matrix.shardTotal }}" >> $GITHUB_ENV     
-      - name: Install dependencies
-        run: npm install
-      - name: Install Playwright Browsers
-        run: npx playwright install
-      - name: Run Playwright tests
-        run: |
-         npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+    - name: Set shardTotal environment variable
+      run: echo "SHARD_TOTAL=${{ github.event.inputs.shardTotal }}" >> $GITHUB_ENV     
+    - name: Install dependencies
+      run: npm install
+    - name: Install Playwright Browsers
+      run: npx playwright install
+    - name: Run Playwright tests
+      run: |
+        npx playwright test --shard=${{ matrix.shardIndex }}/${{ github.event.inputs.shardTotal }}
