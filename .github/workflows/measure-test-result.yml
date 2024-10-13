@@ -1,0 +1,107 @@
+name: Measure Test Execution Time
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'tests/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'tests/**'
+  workflow_dispatch:
+jobs:
+  measure_execution:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shardIndex: [1, 2, 3,4,5,6,7,8]
+        shardTotal: [8]
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  
+    - name: Set shardIndex environment variable
+      run: echo 'SHARD_INDEX=${{ matrix.shardIndex }}' >> $GITHUB_ENV          
+    - uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+    - name: Install dependencies
+      run: npm install
+    - name: Install Playwright Browsers
+      run: npx playwright install
+    - name: Run Playwright tests
+      run: |
+        MEASURE_EXECUTION_TIME=true npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }} --repeat-each=1
+    - name: Upload JSON File
+      uses: actions/upload-artifact@v4
+      with:
+        name: test_execuction_results_${{ matrix.shardIndex }}
+        path: test_execuction_results_${{ matrix.shardIndex }}.json
+  combine_test_execution_result:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    needs:
+      - measure_execution
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - run: |
+        if [[ -f test_execuction_results.json ]]; then
+            rm test_execuction_results.json
+        fi 
+    - name: Download JSON File1
+      uses: actions/download-artifact@v4
+      with:
+        name: test_execuction_results_1
+        path: .  
+    - name: Download JSON File 2
+      uses: actions/download-artifact@v4
+      with:
+        name: test_execuction_results_2
+        path: .
+    - name: Download JSON File 3
+      uses: actions/download-artifact@v4
+      with:
+        name: test_execuction_results_3
+        path: .
+    - name: Download JSON File 4
+      uses: actions/download-artifact@v4
+      with:
+        name: test_execuction_results_4
+        path: .
+    - name: Download JSON File 5
+      uses: actions/download-artifact@v4
+      with:
+        name: test_execuction_results_5
+        path: .
+    - name: Download JSON File 6
+      uses: actions/download-artifact@v4
+      with:
+        name: test_execuction_results_6
+        path: .
+    - name: Download JSON File 7
+      uses: actions/download-artifact@v4
+      with:
+        name: test_execuction_results_7
+        path: .
+    - name: Download JSON File 8
+      uses: actions/download-artifact@v4
+      with:
+        name: test_execuction_results_8
+        path: .
+    - uses: sergeysova/jq-action@v2
+      with:
+        cmd: jq -s '[.[][]]' test_execuction_results_*.json > test_execuction_results.json
+    - run: rm test_execuction_results_*.json  
+    - uses: actions/upload-artifact@v4
+      with:
+        name: test_execuction_results
+        path: test_execuction_results.json              
+    - name: Commit Json File
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+         commit_message: 'Update Execution Time file'
+         file_pattern: "*.json"   

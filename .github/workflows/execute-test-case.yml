@@ -1,0 +1,55 @@
+name: Exeute Test Case
+on:
+  workflow_dispatch:
+jobs:
+  test_smart_orchestration:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shardIndex: [1, 2, 3]
+        shardTotal: [3]
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+    - name: Set shardTotal environment variable
+      run: echo "SHARD_TOTAL=${{ matrix.shardTotal }}" >> $GITHUB_ENV     
+    - name: Install dependencies
+      run: npm install
+    - name: Install Playwright Browsers
+      run: npx playwright install
+    - name: Get test names
+      id: getTestNames
+      run: |
+        test_names=$(node -e 'import("sharding-pk-play").then(module => console.log(module.orchestrateTestsForShard(${{ matrix.shardIndex }}))).catch(err => console.error(err))')
+        echo "::set-output name=test_names::$test_names"
+    - name: Run Playwright tests
+      run: |
+          npx playwright test --grep "${{ steps.getTestNames.outputs.test_names }}"
+  test_no_orcestration:
+    needs:
+      - test_smart_orchestration
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    strategy:
+        fail-fast: false
+        matrix:
+          shardIndex: [1, 2, 3]
+          shardTotal: [3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - name: Set shardTotal environment variable
+        run: echo "shardTotal=${{ matrix.shardTotal }}" >> $GITHUB_ENV     
+      - name: Install dependencies
+        run: npm install
+      - name: Install Playwright Browsers
+        run: npx playwright install
+      - name: Run Playwright tests
+        run: |
+         npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
