@@ -20,7 +20,6 @@ on:
 jobs:
   check_existing_test_execution_result:
     runs-on: ubuntu-latest
-    if: ${{ inputs.run_measure_execution == 'no' }}
     outputs:
       has_test_execution_result: ${{ steps.check_file.outputs.has_test_execution_result }}
     steps:
@@ -39,7 +38,7 @@ jobs:
   measure_execution:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    if: ${{ inputs.run_measure_execution == 'yes' || needs.check_existing_test_execution_result.outputs.has_test_execution_result == 'false' }}
+    if: ${{ inputs.run_measure_execution == 'yes'}}
     strategy:
       fail-fast: false
       matrix:
@@ -72,7 +71,6 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - measure_execution
-    if: ${{ inputs.run_measure_execution == 'yes' || needs.check_existing_test_execution_result.outputs.has_test_execution_result == 'true' }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -138,7 +136,9 @@ jobs:
   test_smart_orchestration:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    if: ${{ (inputs.run_measure_execution == 'yes' && needs.combine_test_execution_result == 'success') || (inputs.run_measure_execution == 'no' && needs.check_existing_test_execution_result.outputs.has_test_execution_result == 'true') }}
+    needs:
+      - check_existing_test_execution_result
+    if: ${{ needs.combine_test_execution_result != 'success' || needs.check_existing_test_execution_result.outputs.has_test_execution_result == 'true' }}
     strategy:
       fail-fast: false
       matrix:
