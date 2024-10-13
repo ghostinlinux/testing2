@@ -34,8 +34,6 @@ jobs:
   combine_test_execution_result:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    needs:
-      - measure_execution
     steps:
     - uses: actions/checkout@v4
       with:
@@ -76,7 +74,8 @@ jobs:
   measure_execution:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    needs: set_variables
+    needs:
+      - measure_execution
     strategy:
       fail-fast: false
       matrix:
