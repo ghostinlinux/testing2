@@ -80,6 +80,10 @@ jobs:
         path: .
         pattern: test_execuction_results_*
     - run: ls -R .
+    - name: Move JSON files to root directory
+      run: |
+        find . -type f -name "*.json" -exec mv {} . \;
+    - run: ls -R .
     - uses: sergeysova/jq-action@v2
       with:
         cmd: jq -s '[.[][]]' test_execuction_results_*.json > test_execuction_results.json
