@@ -33,6 +33,7 @@ jobs:
           else
             echo "not exists"
             echo "::set-output name=has_test_execution_result::false"
+          fi
 
   measure_execution:
     timeout-minutes: 60
