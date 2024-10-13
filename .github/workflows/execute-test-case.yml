@@ -3,11 +3,11 @@ on:
   workflow_dispatch:
     inputs:
       shardIndex:
-        description: "Provide shard indices (comma-separated)"
+        description: 'Provide shard indices (comma-separated)'
         required: true
         default: '1,2,3,4,5,6,7,8,9,10'
       shardTotal:
-        description: "Provide total number of shards"
+        description: 'Provide total number of shards'
         required: true
         default: 10
 
