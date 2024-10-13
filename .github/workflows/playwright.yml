@@ -198,7 +198,7 @@ jobs:
   
   test_no_orcestration:
     needs:
-      - test_smart_orchestration
+      - test_smart_orchestration_yes
     timeout-minutes: 60
     runs-on: ubuntu-latest
     strategy:
