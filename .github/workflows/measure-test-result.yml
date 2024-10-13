@@ -75,7 +75,7 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     needs:
-      - measure_execution
+      - combine_test_execution_result
     strategy:
       fail-fast: false
       matrix:
