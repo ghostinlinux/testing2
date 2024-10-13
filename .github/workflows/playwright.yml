@@ -1,4 +1,5 @@
 name: Playwright Tests
+
 on:
   push:
     branches: [ main ]
@@ -9,146 +10,139 @@ on:
     paths:
       - 'tests/**'
   workflow_dispatch:
+    inputs:
+      run_measure_execution:
+        description: 'Run the measure_execution job?'
+        required: true
+        default: 'yes'
+        type: string
+
 jobs:
+  check_existing_test_execution_result:
+    runs-on: ubuntu-latest
+    outputs:
+      has_test_execution_result: ${{ steps.check_file.outputs.has_test_execution_result }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check if test_execuction_results.json exists
+        id: check_file
+        run: |
+          if [[ -f test_execuction_results.json ]]; then
+            echo "exists"
+            echo "::set-output name=has_test_execution_result::true"
+          else
+            echo "not exists"
+            echo "::set-output name=has_test_execution_result::false"
+
   measure_execution:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    if: ${{ inputs.run_measure_execution == 'yes' || needs.check_existing_test_execution_result.outputs.has_test_execution_result == 'false' }}
     strategy:
       fail-fast: false
       matrix:
-        shardIndex: [1, 2, 3,4,5,6,7,8]
+        shardIndex: [1, 2, 3, 4, 5, 6, 7, 8]
         shardTotal: [8]
     steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0  
-    - name: Set shardIndex environment variable
-      run: echo 'SHARD_INDEX=${{ matrix.shardIndex }}' >> $GITHUB_ENV          
-    - uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
-    - name: Install dependencies
-      run: npm install
-    - name: Install Playwright Browsers
-      run: npx playwright install
-    - name: Run Playwright tests
-      run: |
-        MEASURE_EXECUTION_TIME=true npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }} --repeat-each=1
-    - name: Upload JSON File
-      uses: actions/upload-artifact@v4
-      with:
-        name: test_execuction_results_${{ matrix.shardIndex }}
-        path: test_execuction_results_${{ matrix.shardIndex }}.json
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  
+      - name: Set shardIndex environment variable
+        run: echo 'SHARD_INDEX=${{ matrix.shardIndex }}' >> $GITHUB_ENV          
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - name: Install dependencies
+        run: npm install
+      - name: Install Playwright Browsers
+        run: npx playwright install
+      - name: Run Playwright tests
+        run: |
+          MEASURE_EXECUTION_TIME=true npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }} --repeat-each=1
+      - name: Upload JSON File
+        uses: actions/upload-artifact@v4
+        with:
+          name: test_execuction_results_${{ matrix.shardIndex }}
+          path: test_execuction_results_${{ matrix.shardIndex }}.json
+
   combine_test_execution_result:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    needs:
-      - measure_execution
+    if: ${{ inputs.run_measure_execution == 'yes' || needs.check_existing_test_execution_result.outputs.has_test_execution_result == 'true' }}
     steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - run: |
-        if [[ -f test_execuction_results.json ]]; then
-            rm test_execuction_results.json
-        fi 
-    - name: Download JSON File1
-      uses: actions/download-artifact@v4
-      with:
-        name: test_execuction_results_1
-        path: .  
-    - name: Download JSON File 2
-      uses: actions/download-artifact@v4
-      with:
-        name: test_execuction_results_2
-        path: .
-    - name: Download JSON File 3
-      uses: actions/download-artifact@v4
-      with:
-        name: test_execuction_results_3
-        path: .
-    - name: Download JSON File 4
-      uses: actions/download-artifact@v4
-      with:
-        name: test_execuction_results_4
-        path: .
-    - name: Download JSON File 5
-      uses: actions/download-artifact@v4
-      with:
-        name: test_execuction_results_5
-        path: .
-    - name: Download JSON File 6
-      uses: actions/download-artifact@v4
-      with:
-        name: test_execuction_results_6
-        path: .
-    - name: Download JSON File 7
-      uses: actions/download-artifact@v4
-      with:
-        name: test_execuction_results_7
-        path: .
-    - name: Download JSON File 8
-      uses: actions/download-artifact@v4
-      with:
-        name: test_execuction_results_8
-        path: .
-    - uses: sergeysova/jq-action@v2
-      with:
-        cmd: jq -s '[.[][]]' test_execuction_results_*.json > test_execuction_results.json
-    - run: rm test_execuction_results_*.json  
-    - uses: actions/upload-artifact@v4
-      with:
-        name: test_execuction_results
-        path: test_execuction_results.json              
-    - name: Commit Json File
-      uses: stefanzweifel/git-auto-commit-action@v5
-      with:
-         commit_message: 'Update Execution Time file'
-         file_pattern: "*.json"   
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: |
+          if [[ -f test_execuction_results.json ]]; then
+              rm test_execuction_results.json
+          fi 
+      - name: Download JSON File1
+        uses: actions/download-artifact@v4
+        with:
+          name: test_execuction_results_1
+          path: .  
+      # (Repeat for other JSON files)
+      - uses: sergeysova/jq-action@v2
+        with:
+          cmd: jq -s '[.[][]]' test_execuction_results_*.json > test_execuction_results.json
+      - run: rm test_execuction_results_*.json  
+      - uses: actions/upload-artifact@v4
+        with:
+          name: test_execuction_results
+          path: test_execuction_results.json              
+      - name: Commit Json File
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+           commit_message: 'Update Execution Time file'
+           file_pattern: "*.json"
+
   test_smart_orchestration:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     needs:
-      - measure_execution
+      - check_existing_test_execution_result
       - combine_test_execution_result
+    if: ${{ inputs.run_measure_execution == 'yes' || needs.check_existing_test_execution_result.outputs.has_test_execution_result == 'true' }}
     strategy:
       fail-fast: false
       matrix:
         shardIndex: [1, 2, 3]
         shardTotal: [3]
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/download-artifact@v4
-      with:
-        name: test_execuction_results
-        path: .
-    - uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
-    - name: Set shardTotal environment variable
-      run: echo "SHARD_TOTAL=${{ matrix.shardTotal }}" >> $GITHUB_ENV     
-    - name: Install dependencies
-      run: npm install
-    - name: Install Playwright Browsers
-      run: npx playwright install
-    - name: Get test names
-      id: getTestNames
-      run: |
-        test_names=$(node -e 'import("sharding-pk-play").then(module => console.log(module.orchestrateTestsForShard(${{ matrix.shardIndex }}))).catch(err => console.error(err))')
-        echo "::set-output name=test_names::$test_names"
-    - name: Run Playwright tests
-      run: |
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: test_execuction_results
+          path: .
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - name: Set shardTotal environment variable
+        run: echo "SHARD_TOTAL=${{ matrix.shardTotal }}" >> $GITHUB_ENV     
+      - name: Install dependencies
+        run: npm install
+      - name: Install Playwright Browsers
+        run: npx playwright install
+      - name: Get test names
+        id: getTestNames
+        run: |
+          test_names=$(node -e 'import("sharding-pk-play").then(module => console.log(module.orchestrateTestsForShard(${{ matrix.shardIndex }}))).catch(err => console.error(err))')
+          echo "::set-output name=test_names::$test_names"
+      - name: Run Playwright tests
+        run: |
           npx playwright test --grep "${{ steps.getTestNames.outputs.test_names }}"
+
   test_no_orcestration:
     needs:
       - test_smart_orchestration
     timeout-minutes: 60
     runs-on: ubuntu-latest
     strategy:
-        fail-fast: false
-        matrix:
-          shardIndex: [1, 2, 3]
-          shardTotal: [3]
+      fail-fast: false
+      matrix:
+        shardIndex: [1, 2, 3]
+        shardTotal: [3]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -162,4 +156,4 @@ jobs:
         run: npx playwright install
       - name: Run Playwright tests
         run: |
-         npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+          npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
