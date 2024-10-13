@@ -1,4 +1,3 @@
-name: Measure Test Execution Time
 on:
   push:
     branches: [ main ]
@@ -74,10 +73,14 @@ jobs:
         if [[ -f test_execuction_results.json ]]; then
             rm test_execuction_results.json
         fi 
+    - name: Set shardIndexArray environment variable
+      run: |
+        shardIndexArray=$(echo '["'${{ github.event.inputs.shardIndex }}'"]' | sed 's/,/","/g')
+        echo "shardIndexArray=$shardIndexArray" >> $GITHUB_ENV
     - name: Download JSON Files
       run: |
         shardTotal=${{ github.event.inputs.shardTotal }}
-        shardIndexArray=(${{ fromJson('["' + github.event.inputs.shardIndex.replace(',', '","') + '"]') }})
+        shardIndexArray=${{ fromJson(env.shardIndexArray) }}
         for i in "${shardIndexArray[@]}"; do
           echo "Downloading test_execuction_results_$i.json"
           gh api -H "Accept: application/vnd.github.v3+json" \
