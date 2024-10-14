@@ -20,9 +20,9 @@ jobs:
       - name: Set shardIndex array
         id: set_vars
         run: |
-          echo "shardIndexArray=${{ github.event.inputs.shardIndex }}" >> $GITHUB_ENV
-        outputs:
-          shardIndexArray: ${{ github.event.inputs.shardIndex }}
+          shardIndexArray=$(echo '["'${{ github.event.inputs.shardIndex }}'"]' | sed 's/,/","/g')
+          echo "shardIndexArray=$shardIndexArray" >> $GITHUB_ENV
+          echo "::set-output name=shardIndexArray::$shardIndexArray"
 
   test_smart_orchestration:
     runs-on: ubuntu-latest
@@ -31,7 +31,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shardIndex: ${{ fromJson('["' + needs.set_variables.outputs.shardIndexArray.replace(',', '","') + '"]') }}
+        shardIndex: ${{ fromJson(needs.set_variables.outputs.shardIndexArray) }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -63,10 +63,9 @@ jobs:
       - name: Set shardIndex array
         id: set_vars_no_orcestration
         run: |
-          echo "shardIndexArray=${{ github.event.inputs.shardIndex }}" >> $GITHUB_ENV
-        outputs:
-          shardIndexArray: ${{ github.event.inputs.shardIndex }}
-
+          shardIndexArray=$(echo '["'${{ github.event.inputs.shardIndex }}'"]' | sed 's/,/","/g')
+          echo "shardIndexArray=$shardIndexArray" >> $GITHUB_ENV
+          echo "::set-output name=shardIndexArray::$shardIndexArray"
   test_no_orcestration:
     needs:
       - set_variables_no_orcestration
@@ -75,7 +74,7 @@ jobs:
     strategy:
         fail-fast: false
         matrix:
-          shardIndex: ${{ fromJson('["' + needs.set_variables_no_orcestration.outputs.shardIndexArray.replace(',', '","') + '"]') }}
+          shardIndex: ${{ fromJson(needs.set_variables_no_orcestration.outputs.shardIndexArray) }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
