@@ -53,15 +53,28 @@ jobs:
       - name: Run Playwright tests
         run: |
           npx playwright test --grep "${{ env.test_names }}"
+
+  set_variables_no_orcestration:
+    needs: test_smart_orchestration
+    runs-on: ubuntu-latest
+    outputs:
+      shardIndexArray: ${{ steps.set_vars_no_orcestration.outputs.shardIndexArray }}
+    steps:
+      - name: Set shardIndex array
+        id: set_vars_no_orcestration
+        run: |
+          shardIndexArray=$(echo '["'${{ github.event.inputs.shardIndex }}'"]' | sed 's/,/","/g')
+          echo "shardIndexArray=$shardIndexArray" >> $GITHUB_ENV
+          echo "::set-output name=shardIndexArray::$shardIndexArray"
   test_no_orcestration:
     needs:
-      - test_smart_orchestration
+      - set_variables_no_orcestration
     timeout-minutes: 60
     runs-on: ubuntu-latest
     strategy:
         fail-fast: false
         matrix:
-          shardIndex: ${{ needs.set_variables.outputs.shardIndexArray }}
+          shardIndex: ${{ fromJson(needs.set_variables_no_orcestration.outputs.shardIndexArray) }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
