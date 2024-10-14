@@ -21,9 +21,7 @@ jobs:
         id: set_vars
         run: |
           shardIndexArray=$(echo '["'${{ github.event.inputs.shardIndex }}'"]' | sed 's/,/","/g')
-          echo "shardIndexArray=$shardIndexArray" >> $GITHUB_ENV
-          echo "shardIndexArray=$shardIndexArray" >> $GITHUB_ENV
-          echo "::set-output name=shardIndexArray::$shardIndexArray"
+          echo "::set-output name=shardIndexArray::${shardIndexArray}"
 
   test_smart_orchestration:
     runs-on: ubuntu-latest
