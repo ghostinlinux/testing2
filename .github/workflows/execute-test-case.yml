@@ -61,7 +61,7 @@ jobs:
     needs: test_smart_orchestration
     steps:
       - name: Debug Output
-        run: echo "${{ fromJson(needs.set_variables.outputs.shardIndexArray) }}""
+        run: echo "${{ needs.set_variables.outputs.shardIndexArray}}""
 
   
   test_no_orcestration:
