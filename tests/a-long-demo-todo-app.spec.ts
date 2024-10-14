@@ -9,7 +9,7 @@ const TODO_ITEMS = [
 test.describe("New Todo", () => {
   test("llong should long allow me to add todo items", async ({ page }) => {
     // create a new todo locator
-    // await page.waitForTimeout(65_000);
+    await page.waitForTimeout(65_000);
     const newTodo = page.getByPlaceholder("What needs to be done?");
 
     // Create 1st todo.
@@ -53,7 +53,7 @@ test.describe("New Todo", () => {
     page,
   }) => {
     // Create 3 items.
-    // await page.waitForTimeout(45_000);
+    await page.waitForTimeout(45_000);
 
     await createDefaultTodos(page);
 
@@ -86,7 +86,7 @@ test.describe("Mark all as completed", () => {
     page,
   }) => {
     // complete all along along todos.
-    // await page.waitForTimeout(30_000);
+    await page.waitForTimeout(30_000);
 
     await page.getByLabel("Mark all as complete").check();
 
@@ -102,7 +102,7 @@ test.describe("Mark all as completed", () => {
   test("long should long allow me to clear the complete state of all items", async ({
     page,
   }) => {
-    // await page.waitForTimeout(60_000);
+    await page.waitForTimeout(60_000);
 
     const toggleAll = page.getByLabel("Mark all as complete");
     // Check and then immediately uncheck.
@@ -116,7 +116,7 @@ test.describe("Mark all as completed", () => {
   test("long complete all along along checkbox should update state when items are completed / cleared", async ({
     page,
   }) => {
-    // await page.waitForTimeout(70_000);
+    await page.waitForTimeout(70_000);
 
     const toggleAll = page.getByLabel("Mark all as complete");
     await toggleAll.check();
@@ -143,7 +143,7 @@ test.describe("Item", () => {
     page,
   }) => {
     // create a new todo locator
-    // await page.waitForTimeout(60_000);
+    await page.waitForTimeout(60_000);
     const newTodo = page.getByPlaceholder("What needs to be done?");
 
     // Create two items.
@@ -227,7 +227,7 @@ test.describe("Editing", () => {
   test("long should long hide other controls when editing", async ({
     page,
   }) => {
-    // await page.waitForTimeout(60_000);
+    await page.waitForTimeout(60_000);
 
     const todoItem = page.getByTestId("todo-item").nth(1);
     await todoItem.dblclick();
@@ -241,7 +241,7 @@ test.describe("Editing", () => {
   });
 
   test("long should long save edits on blur", async ({ page }) => {
-    // await page.waitForTimeout(30_000);
+    await page.waitForTimeout(30_000);
 
     const todoItems = page.getByTestId("todo-item");
     await todoItems.nth(1).dblclick();
@@ -263,7 +263,7 @@ test.describe("Editing", () => {
   });
 
   test("long should long trim entered text", async ({ page }) => {
-    // await page.waitForTimeout(10_000);
+    await page.waitForTimeout(10_000);
 
     const todoItems = page.getByTestId("todo-item");
     await todoItems.nth(1).dblclick();
@@ -287,7 +287,7 @@ test.describe("Editing", () => {
   test("long should long remove the item if an empty text string was entered", async ({
     page,
   }) => {
-    // await page.waitForTimeout(40_000);
+    await page.waitForTimeout(40_000);
 
     const todoItems = page.getByTestId("todo-item");
     await todoItems.nth(1).dblclick();
@@ -421,7 +421,7 @@ test.describe("Routing", () => {
   });
 
   test("long should long respect the back button", async ({ page }) => {
-    // await page.waitForTimeout(25_000);
+    await page.waitForTimeout(25_000);
 
     const todoItem = page.getByTestId("todo-item");
     await page.getByTestId("todo-item").nth(1).getByRole("checkbox").check();
@@ -451,7 +451,7 @@ test.describe("Routing", () => {
   test("long should long allow me to display completed items", async ({
     page,
   }) => {
-    // await page.waitForTimeout(40_000);
+    await page.waitForTimeout(40_000);
 
     await page.getByTestId("todo-item").nth(1).getByRole("checkbox").check();
     await checkNumberOfCompletedTodosInLocalStorage(page, 1);
@@ -471,7 +471,7 @@ test.describe("Routing", () => {
   test("long should long highlight the currently applied filter", async ({
     page,
   }) => {
-    // await page.waitForTimeout(5_000);
+    await page.waitForTimeout(5_000);
 
     await expect(page.getByRole("link", { name: "All" })).toHaveClass(
       "selected"
