@@ -23,6 +23,8 @@ jobs:
           shardIndexArray=$(echo '["'${{ github.event.inputs.shardIndex }}'"]' | sed 's/,/","/g')
           echo "shardIndexArray=$shardIndexArray" >> $GITHUB_ENV
           echo "::set-output name=shardIndexArray::$shardIndexArray"
+      - name: Debug Output
+        run: echo "shardIndexArray=${{ steps.set_vars.outputs.shardIndexArray }}"
 
   test_smart_orchestration:
     runs-on: ubuntu-latest
@@ -43,6 +45,8 @@ jobs:
         run: npm install
       - name: Install Playwright Browsers
         run: npx playwright install
+      - name: Debug Output
+        run: echo "${{ matrix.shardIndex }}"
       - name: Get test names
         id: getTestNames
         run: |
@@ -66,7 +70,9 @@ jobs:
         with:
           node-version: lts/*
       - name: Set shardTotal environment variable
-        run: echo "SHARD_TOTAL=${{ github.event.inputs.shardTotal }}" >> $GITHUB_ENV     
+        run: echo "SHARD_TOTAL=${{ github.event.inputs.shardTotal }}" >> $GITHUB_ENV
+      - name: Debug Output
+        run: echo "${{ matrix.shardIndex }}"     
       - name: Install dependencies
         run: npm install
       - name: Install Playwright Browsers
