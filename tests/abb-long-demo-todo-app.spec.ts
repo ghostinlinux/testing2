@@ -1,13 +1,4 @@
-import { test, expect, type Page } from "@playwright/test";
-import { measureExecutionTime } from "sharding-pk-play";
-
-test.beforeEach(async ({ page }, testInfo) => {
-  await page.goto("https://demo.playwright.dev/todomvc");
-  testInfo.duration;
-});
-test.afterEach(async ({ page }, testInfo) => {
-  measureExecutionTime(testInfo);
-});
+import { test, expect, Page } from "../libs/basetest";
 
 const TODO_ITEMS = [
   "buy some cheese",
