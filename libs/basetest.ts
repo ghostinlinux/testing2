@@ -1,4 +1,4 @@
-import { test as baseTest, expect, Page } from "@playwright/test";
+import { test as baseTest, expect, type Page } from "@playwright/test";
 import { measureExecutionTime } from "sharding-pk-play";
 
 // Define a custom test fixture that includes beforeEach and afterEach hooks
