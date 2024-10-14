@@ -56,24 +56,28 @@ jobs:
         run: |
           npx playwright test --grep "${{ env.test_names }}"
 
-  test_no_orchestration:
-    needs: test_smart_orchestration
-    runs-on: ubuntu-latest
+  
+  test_no_orcestration:
+    needs:
+      - test_smart_orchestration
     timeout-minutes: 60
+    runs-on: ubuntu-latest
     strategy:
-      matrix:
-        shardIndex: ${{ fromJson(needs.set_variables.outputs.shardIndexArray) }}
+        fail-fast: false
+        matrix:
+          shardIndex: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+          shardTotal: [10]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
       - name: Set shardTotal environment variable
-        run: echo "SHARD_TOTAL=${{ github.event.inputs.shardTotal }}" >> $GITHUB_ENV   
+        run: echo "shardTotal=${{ matrix.shardTotal }}" >> $GITHUB_ENV     
       - name: Install dependencies
         run: npm install
       - name: Install Playwright Browsers
         run: npx playwright install
       - name: Run Playwright tests
         run: |
-          npx playwright test --shard=${{ matrix.shardIndex }}/${{ github.event.inputs.shardTotal }}
+         npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
