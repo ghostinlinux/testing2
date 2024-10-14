@@ -17,4 +17,5 @@ export const test = baseTest.extend({
 });
 
 // Export expect for use in test files
-export { expect, Page };
+export { expect };
+export { Page };
