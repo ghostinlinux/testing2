@@ -1,4 +1,4 @@
-import { test, expect, type Page } from "../libs/basetest";
+import { test, expect, Page } from "../libs/basetest";
 
 const TODO_ITEMS = [
   "buy some cheese",
