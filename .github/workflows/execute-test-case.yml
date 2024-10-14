@@ -30,10 +30,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: set_variables
     timeout-minutes: 60
-    strategy:
-      fail-fast: false
-      matrix:
-        shardIndex: ${{ fromJson(needs.set_variables.outputs.shardIndexArray) }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -46,11 +42,11 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install
       - name: Debug Output
-        run: echo "${{ matrix.shardIndex }}"
+        run: echo "${{ fromJson(needs.set_variables.outputs.shardIndexArray) }}"
       - name: Get test names
         id: getTestNames
         run: |
-          test_names=$(node -e 'import("sharding-pk-play").then(module => console.log(module.orchestrateTestsForShard(${{ matrix.shardIndex }}))).catch(err => console.error(err))')
+          test_names=$(node -e 'import("sharding-pk-play").then(module => console.log(module.orchestrateTestsForShard(${{ fromJson(needs.set_variables.outputs.shardIndexArray) }}))).catch(err => console.error(err))')
           echo "test_names=$test_names" >> $GITHUB_ENV
       - name: Run Playwright tests
         run: |
@@ -60,10 +56,6 @@ jobs:
     needs: test_smart_orchestration
     runs-on: ubuntu-latest
     timeout-minutes: 60
-    strategy:
-      fail-fast: false
-      matrix:
-        shardIndex: ${{ fromJson(needs.set_variables.outputs.shardIndexArray) }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -72,11 +64,11 @@ jobs:
       - name: Set shardTotal environment variable
         run: echo "SHARD_TOTAL=${{ github.event.inputs.shardTotal }}" >> $GITHUB_ENV
       - name: Debug Output
-        run: echo "${{ matrix.shardIndex }}"     
+        run: echo "${{ fromJson(needs.set_variables.outputs.shardIndexArray) }}"     
       - name: Install dependencies
         run: npm install
       - name: Install Playwright Browsers
         run: npx playwright install
       - name: Run Playwright tests
         run: |
-          npx playwright test --shard=${{ matrix.shardIndex }}/${{ github.event.inputs.shardTotal }}
+          npx playwright test --shard=${{ fromJson(needs.set_variables.outputs.shardIndexArray) }}/${{ github.event.inputs.shardTotal }}
