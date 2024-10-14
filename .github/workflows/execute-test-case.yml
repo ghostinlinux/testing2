@@ -40,7 +40,7 @@ jobs:
         with:
           node-version: lts/*
       - name: debug hello
-        run: echo ${{ fromJson(needs.set_variables.outputs.shardIndexArray) }}
+        run: echo ${{ needs.set_variables.outputs.shardIndexArray }}
       - name: Set shardTotal environment variable
         run: echo "SHARD_TOTAL=${{ github.event.inputs.shardTotal }}" >> $GITHUB_ENV     
       - name: Install dependencies
