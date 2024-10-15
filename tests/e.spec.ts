@@ -100,9 +100,9 @@ test.describe("e_4th_describe", () => {
     console.log("ensure user flows operate without issues");
   });
 
-  test("check application stability under load", async ({ page }) => {
+  test("check application stability under load sgcyua", async ({ page }) => {
     await page.waitForTimeout(10000);
-    console.log("check application stability under load");
+    console.log("check application stability under load sgcyua");
   });
 
   test("validate cross-browser compatibility thoroughly", async ({ page }) => {

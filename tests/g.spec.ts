@@ -34,9 +34,11 @@ test.describe("g_1st_describe", () => {
     console.log("ensure loading dynamic elements functions");
   });
 
-  test("assess performance under heavy load", async ({ page }) => {
+  test("assess performance under heavy load gaegyuoouiytsd", async ({
+    page,
+  }) => {
     await page.waitForTimeout(14000);
-    console.log("assess performance under heavy load");
+    console.log("assess performance under heavy load gaegyuoouiytsd");
   });
 });
 
