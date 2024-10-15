@@ -1,4 +1,17 @@
-import { test, expect, Page } from "../libs/basetest";
+import { test, expect, type Page } from '@playwright/test';
+import { measureExecutionTime } from "sharding-pk-play";
+
+test.beforeEach(async ({ page }, testInfo) => {
+  console.log(`Running beforeEach for ${testInfo.title} Before Each`);
+  await page.goto('https://demo.playwright.dev/todomvc');
+  testInfo.duration
+});
+
+// Define a global afterEach hook
+test.afterEach(async ({ page }, testInfo) => {
+  console.log(`Running afterEach for ${testInfo.title} After Each`);
+  measureExecutionTime(testInfo); // Custom function to measure time
+});
 
 test.describe("j_1st_describe", () => {
   for (let i = 1; i <= 5; i++) {
