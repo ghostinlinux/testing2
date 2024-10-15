@@ -57,7 +57,7 @@ test.describe("f_2nd_describe", () => {
   });
 
   test("f test 9", async ({ page }) => {
-    await page.waitForTimeout(12000);
+    await page.waitForTimeout(180000);
     console.log("f test 9");
   });
 

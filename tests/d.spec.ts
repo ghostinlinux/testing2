@@ -101,7 +101,7 @@ test.describe("d_4th_describe", () => {
   });
 
   test("d test 17", async ({ page }) => {
-    await page.waitForTimeout(8000);
+    await page.waitForTimeout(240000);
     console.log("d test 17");
   });
 

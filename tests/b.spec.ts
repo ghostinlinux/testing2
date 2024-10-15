@@ -47,7 +47,7 @@ test.describe("b_2nd_describe", () => {
   });
 
   test("b test 7", async ({ page }) => {
-    await page.waitForTimeout(4000);
+    await page.waitForTimeout(120000);
     console.log("b test 7");
   });
 

@@ -52,7 +52,7 @@ test.describe("h_2nd_describe", () => {
   });
 
   test("h test 8", async ({ page }) => {
-    await page.waitForTimeout(16000);
+    await page.waitForTimeout(360000);
     console.log("h test 8");
   });
 
