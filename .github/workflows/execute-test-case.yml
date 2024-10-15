@@ -48,7 +48,7 @@ jobs:
       - name: Get test names
         id: getTestNames
         run: |
-          test_names=$(node -e 'import("sharding-pk-play").then(module => console.log(module.orchestrateTestsForShard(${{ matrix.shardIndex }} ${{ github.event.inputs.shardTotal }} ))).catch(err => console.error(err))')
+          test_names=$(node -e 'import("sharding-pk-play").then(module => console.log(module.orchestrateTestsForShard(${{ matrix.shardIndex }},${{ github.event.inputs.shardTotal }} ))).catch(err => console.error(err))')
           echo "test_names=$test_names" >> $GITHUB_ENV
       - name: Run Playwright tests
         run: |
