@@ -14,109 +14,109 @@ test.afterEach(async ({ page }, testInfo) => {
 });
 
 test.describe("b_1st_describe", () => {
-  test("b test 1", async ({ page }) => {
+  test("verify application functionality under load", async ({ page }) => {
     await page.waitForTimeout(4000);
-    console.log("b test 1");
+    console.log("verify application functionality under load");
   });
 
-  test("b test 2", async ({ page }) => {
+  test("confirm user interactions are effective", async ({ page }) => {
     await page.waitForTimeout(4000);
-    console.log("b test 2");
+    console.log("confirm user interactions are effective");
   });
 
-  test("b test 3", async ({ page }) => {
+  test("assess performance metrics for responsiveness", async ({ page }) => {
     await page.waitForTimeout(4000);
-    console.log("b test 3");
+    console.log("assess performance metrics for responsiveness");
   });
 
-  test("b test 4", async ({ page }) => {
+  test("test navigation flow across screens", async ({ page }) => {
     await page.waitForTimeout(4000);
-    console.log("b test 4");
+    console.log("test navigation flow across screens");
   });
 
-  test("b test 5", async ({ page }) => {
+  test("analyze data processing for efficiency", async ({ page }) => {
     await page.waitForTimeout(4000);
-    console.log("b test 5");
+    console.log("analyze data processing for efficiency");
   });
 });
 
 test.describe("b_2nd_describe", () => {
-  test("b test 6", async ({ page }) => {
+  test("evaluate responsiveness on various devices", async ({ page }) => {
     await page.waitForTimeout(4000);
-    console.log("b test 6");
+    console.log("evaluate responsiveness on various devices");
   });
 
-  test("b test 7", async ({ page }) => {
+  test("simulate multiple users accessing application", async ({ page }) => {
     await page.waitForTimeout(120000);
-    console.log("b test 7");
+    console.log("simulate multiple users accessing application");
   });
 
-  test("b test 8", async ({ page }) => {
+  test("verify all buttons trigger actions", async ({ page }) => {
     await page.waitForTimeout(4000);
-    console.log("b test 8");
+    console.log("verify all buttons trigger actions");
   });
 
-  test("b test 9", async ({ page }) => {
+  test("ensure inputs validate as expected", async ({ page }) => {
     await page.waitForTimeout(4000);
-    console.log("b test 9");
+    console.log("ensure inputs validate as expected");
   });
 
-  test("b test 10", async ({ page }) => {
+  test("check error handling in edge cases", async ({ page }) => {
     await page.waitForTimeout(4000);
-    console.log("b test 10");
+    console.log("check error handling in edge cases");
   });
 });
 
 test.describe("b_3rd_describe", () => {
-  test("b test 11", async ({ page }) => {
+  test("test loading speed for resources", async ({ page }) => {
     await page.waitForTimeout(4000);
-    console.log("b test 11");
+    console.log("test loading speed for resources");
   });
 
-  test("b test 12", async ({ page }) => {
+  test("confirm stability under heavy stress", async ({ page }) => {
     await page.waitForTimeout(4000);
-    console.log("b test 12");
+    console.log("confirm stability under heavy stress");
   });
 
-  test("b test 13", async ({ page }) => {
+  test("validate all navigation elements exist", async ({ page }) => {
     await page.waitForTimeout(4000);
-    console.log("b test 13");
+    console.log("validate all navigation elements exist");
   });
 
-  test("b test 14", async ({ page }) => {
+  test("ensure accessibility features are present", async ({ page }) => {
     await page.waitForTimeout(4000);
-    console.log("b test 14");
+    console.log("ensure accessibility features are present");
   });
 
-  test("b test 15", async ({ page }) => {
+  test("monitor performance during long sessions", async ({ page }) => {
     await page.waitForTimeout(4000);
-    console.log("b test 15");
+    console.log("monitor performance during long sessions");
   });
 });
 
 test.describe("b_4th_describe", () => {
-  test("b test 16", async ({ page }) => {
+  test("evaluate user feedback and suggestions", async ({ page }) => {
     await page.waitForTimeout(4000);
-    console.log("b test 16");
+    console.log("evaluate user feedback and suggestions");
   });
 
-  test("b test 17", async ({ page }) => {
+  test("test various input combinations thoroughly", async ({ page }) => {
     await page.waitForTimeout(4000);
-    console.log("b test 17");
+    console.log("test various input combinations thoroughly");
   });
 
-  test("b test 18", async ({ page }) => {
+  test("check system logs for errors", async ({ page }) => {
     await page.waitForTimeout(4000);
-    console.log("b test 18");
+    console.log("check system logs for errors");
   });
 
-  test("b test 19", async ({ page }) => {
+  test("review test results for accuracy", async ({ page }) => {
     await page.waitForTimeout(4000);
-    console.log("b test 19");
+    console.log("review test results for accuracy");
   });
 
-  test("b test 20", async ({ page }) => {
+  test("summarize findings for future improvements", async ({ page }) => {
     await page.waitForTimeout(4000);
-    console.log("b test 20");
+    console.log("summarize findings for future improvements");
   });
 });

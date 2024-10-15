@@ -14,109 +14,109 @@ test.afterEach(async ({ page }, testInfo) => {
 });
 
 test.describe("g_1st_describe", () => {
-  test("g test 1", async ({ page }) => {
+  test("confirm correct form submission works", async ({ page }) => {
     await page.waitForTimeout(14000);
-    console.log("g test 1");
+    console.log("confirm correct form submission works");
   });
 
-  test("g test 2", async ({ page }) => {
+  test("validate user inputs and feedback", async ({ page }) => {
     await page.waitForTimeout(14000);
-    console.log("g test 2");
+    console.log("validate user inputs and feedback");
   });
 
-  test("g test 3", async ({ page }) => {
+  test("check validation messages for errors", async ({ page }) => {
     await page.waitForTimeout(14000);
-    console.log("g test 3");
+    console.log("check validation messages for errors");
   });
 
-  test("g test 4", async ({ page }) => {
+  test("ensure loading dynamic elements functions", async ({ page }) => {
     await page.waitForTimeout(14000);
-    console.log("g test 4");
+    console.log("ensure loading dynamic elements functions");
   });
 
-  test("g test 5", async ({ page }) => {
+  test("assess performance under heavy load", async ({ page }) => {
     await page.waitForTimeout(14000);
-    console.log("g test 5");
+    console.log("assess performance under heavy load");
   });
 });
 
 test.describe("g_2nd_describe", () => {
-  test("g test 6", async ({ page }) => {
+  test("verify responsive design on mobile", async ({ page }) => {
     await page.waitForTimeout(14000);
-    console.log("g test 6");
+    console.log("verify responsive design on mobile");
   });
 
-  test("g test 7", async ({ page }) => {
+  test("check color contrast for accessibility", async ({ page }) => {
     await page.waitForTimeout(14000);
-    console.log("g test 7");
+    console.log("check color contrast for accessibility");
   });
 
-  test("g test 8", async ({ page }) => {
+  test("test API response times effectively", async ({ page }) => {
     await page.waitForTimeout(14000);
-    console.log("g test 8");
+    console.log("test API response times effectively");
   });
 
-  test("g test 9", async ({ page }) => {
+  test("assess database interactions for efficiency", async ({ page }) => {
     await page.waitForTimeout(14000);
-    console.log("g test 9");
+    console.log("assess database interactions for efficiency");
   });
 
-  test("g test 10", async ({ page }) => {
+  test("ensure all user actions are logged", async ({ page }) => {
     await page.waitForTimeout(14000);
-    console.log("g test 10");
+    console.log("ensure all user actions are logged");
   });
 });
 
 test.describe("g_3rd_describe", () => {
-  test("g test 11", async ({ page }) => {
+  test("validate application stability during testing", async ({ page }) => {
     await page.waitForTimeout(14000);
-    console.log("g test 11");
+    console.log("validate application stability during testing");
   });
 
-  test("g test 12", async ({ page }) => {
+  test("check for proper error handling response", async ({ page }) => {
     await page.waitForTimeout(14000);
-    console.log("g test 12");
+    console.log("check for proper error handling response");
   });
 
-  test("g test 13", async ({ page }) => {
+  test("review admin panel functionality thoroughly", async ({ page }) => {
     await page.waitForTimeout(14000);
-    console.log("g test 13");
+    console.log("review admin panel functionality thoroughly");
   });
 
-  test("g test 14", async ({ page }) => {
+  test("ensure session timeouts are functional", async ({ page }) => {
     await page.waitForTimeout(14000);
-    console.log("g test 14");
+    console.log("ensure session timeouts are functional");
   });
 
-  test("g test 15", async ({ page }) => {
+  test("test audit logs for issues effectively", async ({ page }) => {
     await page.waitForTimeout(14000);
-    console.log("g test 15");
+    console.log("test audit logs for issues effectively");
   });
 });
 
 test.describe("g_4th_describe", () => {
-  test("g test 16", async ({ page }) => {
+  test("verify integration with external services", async ({ page }) => {
     await page.waitForTimeout(14000);
-    console.log("g test 16");
+    console.log("verify integration with external services");
   });
 
-  test("g test 17", async ({ page }) => {
+  test("confirm user registration processes are smooth", async ({ page }) => {
     await page.waitForTimeout(14000);
-    console.log("g test 17");
+    console.log("confirm user registration processes are smooth");
   });
 
-  test("g test 18", async ({ page }) => {
+  test("validate functionality of password resets", async ({ page }) => {
     await page.waitForTimeout(14000);
-    console.log("g test 18");
+    console.log("validate functionality of password resets");
   });
 
-  test("g test 19", async ({ page }) => {
+  test("check localization and translation accuracy", async ({ page }) => {
     await page.waitForTimeout(14000);
-    console.log("g test 19");
+    console.log("check localization and translation accuracy");
   });
 
-  test("g test 20", async ({ page }) => {
+  test("ensure all hyperlinks are functional", async ({ page }) => {
     await page.waitForTimeout(14000);
-    console.log("g test 20");
+    console.log("ensure all hyperlinks are functional");
   });
 });

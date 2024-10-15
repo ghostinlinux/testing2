@@ -14,109 +14,109 @@ test.afterEach(async ({ page }, testInfo) => {
 });
 
 test.describe("c_1st_describe", () => {
-  test("c test 1", async ({ page }) => {
+  test("check application loads successfully now", async ({ page }) => {
     await page.waitForTimeout(6000);
-    console.log("c test 1");
+    console.log("check application loads successfully now");
   });
 
-  test("c test 2", async ({ page }) => {
+  test("verify user input behaves correctly", async ({ page }) => {
     await page.waitForTimeout(6000);
-    console.log("c test 2");
+    console.log("verify user input behaves correctly");
   });
 
-  test("c test 3", async ({ page }) => {
+  test("ensure all buttons trigger actions", async ({ page }) => {
     await page.waitForTimeout(6000);
-    console.log("c test 3");
+    console.log("ensure all buttons trigger actions");
   });
 
-  test("c test 4", async ({ page }) => {
+  test("confirm navigation works as expected", async ({ page }) => {
     await page.waitForTimeout(6000);
-    console.log("c test 4");
+    console.log("confirm navigation works as expected");
   });
 
-  test("c test 5", async ({ page }) => {
+  test("validate user interface components function", async ({ page }) => {
     await page.waitForTimeout(6000);
-    console.log("c test 5");
+    console.log("validate user interface components function");
   });
 });
 
 test.describe("c_2nd_describe", () => {
-  test("c test 6", async ({ page }) => {
+  test("assess performance under heavy load", async ({ page }) => {
     await page.waitForTimeout(6000);
-    console.log("c test 6");
+    console.log("assess performance under heavy load");
   });
 
-  test("c test 7", async ({ page }) => {
+  test("simulate multiple user scenarios effectively", async ({ page }) => {
     await page.waitForTimeout(6000);
-    console.log("c test 7");
+    console.log("simulate multiple user scenarios effectively");
   });
 
-  test("c test 8", async ({ page }) => {
+  test("check error handling across inputs", async ({ page }) => {
     await page.waitForTimeout(6000);
-    console.log("c test 8");
+    console.log("check error handling across inputs");
   });
 
-  test("c test 9", async ({ page }) => {
+  test("test application behavior during timeout", async ({ page }) => {
     await page.waitForTimeout(6000);
-    console.log("c test 9");
+    console.log("test application behavior during timeout");
   });
 
-  test("c test 10", async ({ page }) => {
+  test("confirm all links redirect properly", async ({ page }) => {
     await page.waitForTimeout(6000);
-    console.log("c test 10");
+    console.log("confirm all links redirect properly");
   });
 });
 
 test.describe("c_3rd_describe", () => {
-  test("c test 11", async ({ page }) => {
+  test("monitor application responsiveness on devices", async ({ page }) => {
     await page.waitForTimeout(6000);
-    console.log("c test 11");
+    console.log("monitor application responsiveness on devices");
   });
 
-  test("c test 12", async ({ page }) => {
+  test("validate all features work seamlessly", async ({ page }) => {
     await page.waitForTimeout(6000);
-    console.log("c test 12");
+    console.log("validate all features work seamlessly");
   });
 
-  test("c test 13", async ({ page }) => {
+  test("analyze logs for performance insights", async ({ page }) => {
     await page.waitForTimeout(6000);
-    console.log("c test 13");
+    console.log("analyze logs for performance insights");
   });
 
-  test("c test 14", async ({ page }) => {
+  test("review test cases for accuracy", async ({ page }) => {
     await page.waitForTimeout(6000);
-    console.log("c test 14");
+    console.log("review test cases for accuracy");
   });
 
-  test("c test 15", async ({ page }) => {
+  test("evaluate user feedback for enhancements", async ({ page }) => {
     await page.waitForTimeout(6000);
-    console.log("c test 15");
+    console.log("evaluate user feedback for enhancements");
   });
 });
 
 test.describe("c_4th_describe", () => {
-  test("c test 16", async ({ page }) => {
+  test("ensure all user flows function correctly", async ({ page }) => {
     await page.waitForTimeout(6000);
-    console.log("c test 16");
+    console.log("ensure all user flows function correctly");
   });
 
-  test("c test 17", async ({ page }) => {
+  test("check application behavior during stress", async ({ page }) => {
     await page.waitForTimeout(6000);
-    console.log("c test 17");
+    console.log("check application behavior during stress");
   });
 
-  test("c test 18", async ({ page }) => {
+  test("test various input combinations thoroughly", async ({ page }) => {
     await page.waitForTimeout(6000);
-    console.log("c test 18");
+    console.log("test various input combinations thoroughly");
   });
 
-  test("c test 19", async ({ page }) => {
+  test("confirm stability during prolonged sessions", async ({ page }) => {
     await page.waitForTimeout(6000);
-    console.log("c test 19");
+    console.log("confirm stability during prolonged sessions");
   });
 
-  test("c test 20", async ({ page }) => {
+  test("summarize results for future reference", async ({ page }) => {
     await page.waitForTimeout(6000);
-    console.log("c test 20");
+    console.log("summarize results for future reference");
   });
 });

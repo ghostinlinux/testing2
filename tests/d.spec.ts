@@ -14,109 +14,109 @@ test.afterEach(async ({ page }, testInfo) => {
 });
 
 test.describe("d_1st_describe", () => {
-  test("d test 1", async ({ page }) => {
+  test("confirm homepage loads without errors", async ({ page }) => {
     await page.waitForTimeout(8000);
-    console.log("d test 1");
+    console.log("confirm homepage loads without errors");
   });
 
-  test("d test 2", async ({ page }) => {
+  test("check task creation functionality works", async ({ page }) => {
     await page.waitForTimeout(8000);
-    console.log("d test 2");
+    console.log("check task creation functionality works");
   });
 
-  test("d test 3", async ({ page }) => {
+  test("ensure user can delete tasks", async ({ page }) => {
     await page.waitForTimeout(8000);
-    console.log("d test 3");
+    console.log("ensure user can delete tasks");
   });
 
-  test("d test 4", async ({ page }) => {
+  test("validate task editing process functions", async ({ page }) => {
     await page.waitForTimeout(8000);
-    console.log("d test 4");
+    console.log("validate task editing process functions");
   });
 
-  test("d test 5", async ({ page }) => {
+  test("verify task completion toggles correctly", async ({ page }) => {
     await page.waitForTimeout(8000);
-    console.log("d test 5");
+    console.log("verify task completion toggles correctly");
   });
 });
 
 test.describe("d_2nd_describe", () => {
-  test("d test 6", async ({ page }) => {
+  test("assess performance under heavy load", async ({ page }) => {
     await page.waitForTimeout(8000);
-    console.log("d test 6");
+    console.log("assess performance under heavy load");
   });
 
-  test("d test 7", async ({ page }) => {
+  test("simulate multiple user scenarios effectively", async ({ page }) => {
     await page.waitForTimeout(8000);
-    console.log("d test 7");
+    console.log("simulate multiple user scenarios effectively");
   });
 
-  test("d test 8", async ({ page }) => {
+  test("check error handling across inputs", async ({ page }) => {
     await page.waitForTimeout(8000);
-    console.log("d test 8");
+    console.log("check error handling across inputs");
   });
 
-  test("d test 9", async ({ page }) => {
+  test("test application behavior during timeout", async ({ page }) => {
     await page.waitForTimeout(8000);
-    console.log("d test 9");
+    console.log("test application behavior during timeout");
   });
 
-  test("d test 10", async ({ page }) => {
+  test("confirm all links redirect properly", async ({ page }) => {
     await page.waitForTimeout(8000);
-    console.log("d test 10");
+    console.log("confirm all links redirect properly");
   });
 });
 
 test.describe("d_3rd_describe", () => {
-  test("d test 11", async ({ page }) => {
+  test("monitor application responsiveness on devices", async ({ page }) => {
     await page.waitForTimeout(8000);
-    console.log("d test 11");
+    console.log("monitor application responsiveness on devices");
   });
 
-  test("d test 12", async ({ page }) => {
+  test("validate all features work seamlessly", async ({ page }) => {
     await page.waitForTimeout(8000);
-    console.log("d test 12");
+    console.log("validate all features work seamlessly");
   });
 
-  test("d test 13", async ({ page }) => {
+  test("analyze logs for performance insights", async ({ page }) => {
     await page.waitForTimeout(8000);
-    console.log("d test 13");
+    console.log("analyze logs for performance insights");
   });
 
-  test("d test 14", async ({ page }) => {
+  test("review test cases for accuracy", async ({ page }) => {
     await page.waitForTimeout(8000);
-    console.log("d test 14");
+    console.log("review test cases for accuracy");
   });
 
-  test("d test 15", async ({ page }) => {
+  test("evaluate user feedback for enhancements", async ({ page }) => {
     await page.waitForTimeout(8000);
-    console.log("d test 15");
+    console.log("evaluate user feedback for enhancements");
   });
 });
 
 test.describe("d_4th_describe", () => {
-  test("d test 16", async ({ page }) => {
+  test("ensure all user flows function correctly", async ({ page }) => {
     await page.waitForTimeout(8000);
-    console.log("d test 16");
+    console.log("ensure all user flows function correctly");
   });
 
-  test("d test 17", async ({ page }) => {
+  test("check application behavior during stress", async ({ page }) => {
     await page.waitForTimeout(240000);
-    console.log("d test 17");
+    console.log("check application behavior during stress");
   });
 
-  test("d test 18", async ({ page }) => {
+  test("test various input combinations thoroughly", async ({ page }) => {
     await page.waitForTimeout(8000);
-    console.log("d test 18");
+    console.log("test various input combinations thoroughly");
   });
 
-  test("d test 19", async ({ page }) => {
+  test("confirm stability during prolonged sessions", async ({ page }) => {
     await page.waitForTimeout(8000);
-    console.log("d test 19");
+    console.log("confirm stability during prolonged sessions");
   });
 
-  test("d test 20", async ({ page }) => {
+  test("summarize results for future reference", async ({ page }) => {
     await page.waitForTimeout(8000);
-    console.log("d test 20");
+    console.log("summarize results for future reference");
   });
 });

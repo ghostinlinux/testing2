@@ -14,109 +14,109 @@ test.afterEach(async ({ page }, testInfo) => {
 });
 
 test.describe("e_1st_describe", () => {
-  test("e test 1", async ({ page }) => {
+  test("validate user login functionality works", async ({ page }) => {
     await page.waitForTimeout(10000);
-    console.log("e test 1");
+    console.log("validate user login functionality works");
   });
 
-  test("e test 2", async ({ page }) => {
+  test("ensure task addition is successful", async ({ page }) => {
     await page.waitForTimeout(10000);
-    console.log("e test 2");
+    console.log("ensure task addition is successful");
   });
 
-  test("e test 3", async ({ page }) => {
+  test("confirm user can mark tasks", async ({ page }) => {
     await page.waitForTimeout(10000);
-    console.log("e test 3");
+    console.log("confirm user can mark tasks");
   });
 
-  test("e test 4", async ({ page }) => {
+  test("test application behavior with errors", async ({ page }) => {
     await page.waitForTimeout(10000);
-    console.log("e test 4");
+    console.log("test application behavior with errors");
   });
 
-  test("e test 5", async ({ page }) => {
+  test("verify task deletion process works", async ({ page }) => {
     await page.waitForTimeout(10000);
-    console.log("e test 5");
+    console.log("verify task deletion process works");
   });
 });
 
 test.describe("e_2nd_describe", () => {
-  test("e test 6", async ({ page }) => {
+  test("assess page load performance metrics", async ({ page }) => {
     await page.waitForTimeout(10000);
-    console.log("e test 6");
+    console.log("assess page load performance metrics");
   });
 
-  test("e test 7", async ({ page }) => {
+  test("simulate concurrent user actions smoothly", async ({ page }) => {
     await page.waitForTimeout(10000);
-    console.log("e test 7");
+    console.log("simulate concurrent user actions smoothly");
   });
 
-  test("e test 8", async ({ page }) => {
+  test("check navigation through all links", async ({ page }) => {
     await page.waitForTimeout(10000);
-    console.log("e test 8");
+    console.log("check navigation through all links");
   });
 
-  test("e test 9", async ({ page }) => {
+  test("validate error messages for users", async ({ page }) => {
     await page.waitForTimeout(10000);
-    console.log("e test 9");
+    console.log("validate error messages for users");
   });
 
-  test("e test 10", async ({ page }) => {
+  test("confirm application handles edge cases", async ({ page }) => {
     await page.waitForTimeout(10000);
-    console.log("e test 10");
+    console.log("confirm application handles edge cases");
   });
 });
 
 test.describe("e_3rd_describe", () => {
-  test("e test 11", async ({ page }) => {
+  test("monitor system resource usage accurately", async ({ page }) => {
     await page.waitForTimeout(10000);
-    console.log("e test 11");
+    console.log("monitor system resource usage accurately");
   });
 
-  test("e test 12", async ({ page }) => {
+  test("validate input field requirements thoroughly", async ({ page }) => {
     await page.waitForTimeout(10000);
-    console.log("e test 12");
+    console.log("validate input field requirements thoroughly");
   });
 
-  test("e test 13", async ({ page }) => {
+  test("test user interface responsiveness effectively", async ({ page }) => {
     await page.waitForTimeout(10000);
-    console.log("e test 13");
+    console.log("test user interface responsiveness effectively");
   });
 
-  test("e test 14", async ({ page }) => {
+  test("analyze backend performance during tests", async ({ page }) => {
     await page.waitForTimeout(10000);
-    console.log("e test 14");
+    console.log("analyze backend performance during tests");
   });
 
-  test("e test 15", async ({ page }) => {
+  test("review feedback for future improvements", async ({ page }) => {
     await page.waitForTimeout(10000);
-    console.log("e test 15");
+    console.log("review feedback for future improvements");
   });
 });
 
 test.describe("e_4th_describe", () => {
-  test("e test 16", async ({ page }) => {
+  test("ensure user flows operate without issues", async ({ page }) => {
     await page.waitForTimeout(10000);
-    console.log("e test 16");
+    console.log("ensure user flows operate without issues");
   });
 
-  test("e test 17", async ({ page }) => {
+  test("check application stability under load", async ({ page }) => {
     await page.waitForTimeout(10000);
-    console.log("e test 17");
+    console.log("check application stability under load");
   });
 
-  test("e test 18", async ({ page }) => {
+  test("validate cross-browser compatibility thoroughly", async ({ page }) => {
     await page.waitForTimeout(10000);
-    console.log("e test 18");
+    console.log("validate cross-browser compatibility thoroughly");
   });
 
-  test("e test 19", async ({ page }) => {
+  test("confirm all features are accessible easily", async ({ page }) => {
     await page.waitForTimeout(10000);
-    console.log("e test 19");
+    console.log("confirm all features are accessible easily");
   });
 
-  test("e test 20", async ({ page }) => {
+  test("summarize testing results for reporting", async ({ page }) => {
     await page.waitForTimeout(10000);
-    console.log("e test 20");
+    console.log("summarize testing results for reporting");
   });
 });

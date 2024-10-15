@@ -14,109 +14,109 @@ test.afterEach(async ({ page }, testInfo) => {
 });
 
 test.describe("a_1st_describe", () => {
-  test("a test 1", async ({ page }) => {
+  test("explore the new functionality today", async ({ page }) => {
     await page.waitForTimeout(2000);
-    console.log("a test 1");
+    console.log("explore the new functionality today");
   });
 
-  test("a test 2", async ({ page }) => {
+  test("validate the response from server", async ({ page }) => {
     await page.waitForTimeout(2000);
-    console.log("a test 2");
+    console.log("validate the response from server");
   });
 
-  test("a test 3", async ({ page }) => {
+  test("analyze the output for correctness", async ({ page }) => {
     await page.waitForTimeout(2000);
-    console.log("a test 3");
+    console.log("analyze the output for correctness");
   });
 
-  test("a test 4", async ({ page }) => {
+  test("test all scenarios thoroughly today", async ({ page }) => {
     await page.waitForTimeout(2000);
-    console.log("a test 4");
+    console.log("test all scenarios thoroughly today");
   });
 
-  test("a test 5", async ({ page }) => {
+  test("verify all elements on page", async ({ page }) => {
     await page.waitForTimeout(2000);
-    console.log("a test 5");
+    console.log("verify all elements on page");
   });
 });
 
 test.describe("a_2nd_describe", () => {
-  test("a test 6", async ({ page }) => {
+  test("check performance under heavy load", async ({ page }) => {
     await page.waitForTimeout(2000);
-    console.log("a test 6");
+    console.log("check performance under heavy load");
   });
 
-  test("a test 7", async ({ page }) => {
+  test("confirm actions are properly executed", async ({ page }) => {
     await page.waitForTimeout(2000);
-    console.log("a test 7");
+    console.log("confirm actions are properly executed");
   });
 
-  test("a test 8", async ({ page }) => {
+  test("assess usability for new features", async ({ page }) => {
     await page.waitForTimeout(2000);
-    console.log("a test 8");
+    console.log("assess usability for new features");
   });
 
-  test("a test 9", async ({ page }) => {
+  test("execute scripts for testing purposes", async ({ page }) => {
     await page.waitForTimeout(2000);
-    console.log("a test 9");
+    console.log("execute scripts for testing purposes");
   });
 
-  test("a test 10", async ({ page }) => {
+  test("inspect features for possible improvements", async ({ page }) => {
     await page.waitForTimeout(2000);
-    console.log("a test 10");
+    console.log("inspect features for possible improvements");
   });
 });
 
 test.describe("a_3rd_describe", () => {
-  test("a test 11", async ({ page }) => {
+  test("determine behavior under various conditions", async ({ page }) => {
     await page.waitForTimeout(2000);
-    console.log("a test 11");
+    console.log("determine behavior under various conditions");
   });
 
-  test("a test 12", async ({ page }) => {
+  test("examine logic to ensure accuracy", async ({ page }) => {
     await page.waitForTimeout(2000);
-    console.log("a test 12");
+    console.log("examine logic to ensure accuracy");
   });
 
-  test("a test 13", async ({ page }) => {
+  test("monitor changes in application state", async ({ page }) => {
     await page.waitForTimeout(2000);
-    console.log("a test 13");
+    console.log("monitor changes in application state");
   });
 
-  test("a test 14", async ({ page }) => {
+  test("validate data for consistency issues", async ({ page }) => {
     await page.waitForTimeout(2000);
-    console.log("a test 14");
+    console.log("validate data for consistency issues");
   });
 
-  test("a test 15", async ({ page }) => {
+  test("gather metrics to improve performance", async ({ page }) => {
     await page.waitForTimeout(2000);
-    console.log("a test 15");
+    console.log("gather metrics to improve performance");
   });
 });
 
 test.describe("a_4th_describe", () => {
-  test("a test 16", async ({ page }) => {
+  test("review outcomes from previous tests", async ({ page }) => {
     await page.waitForTimeout(2000);
-    console.log("a test 16");
+    console.log("review outcomes from previous tests");
   });
 
-  test("a test 17", async ({ page }) => {
+  test("evaluate scenarios for unexpected behavior", async ({ page }) => {
     await page.waitForTimeout(2000);
-    console.log("a test 17");
+    console.log("evaluate scenarios for unexpected behavior");
   });
 
-  test("a test 18", async ({ page }) => {
+  test("analyze details to identify issues", async ({ page }) => {
     await page.waitForTimeout(2000);
-    console.log("a test 18");
+    console.log("analyze details to identify issues");
   });
 
-  test("a test 19", async ({ page }) => {
+  test("summarize findings for future reference", async ({ page }) => {
     await page.waitForTimeout(2000);
-    console.log("a test 19");
+    console.log("summarize findings for future reference");
   });
 
-  test("a test 20", async ({ page }) => {
+  test("check compatibility with all devices", async ({ page }) => {
     await page.waitForTimeout(2000);
-    console.log("a test 20");
+    console.log("check compatibility with all devices");
   });
 });

@@ -14,109 +14,109 @@ test.afterEach(async ({ page }, testInfo) => {
 });
 
 test.describe("h_1st_describe", () => {
-  test("h test 1", async ({ page }) => {
+  test("confirm page loads without errors", async ({ page }) => {
     await page.waitForTimeout(16000);
-    console.log("h test 1");
+    console.log("confirm page loads without errors");
   });
 
-  test("h test 2", async ({ page }) => {
+  test("verify task addition functionality works", async ({ page }) => {
     await page.waitForTimeout(16000);
-    console.log("h test 2");
+    console.log("verify task addition functionality works");
   });
 
-  test("h test 3", async ({ page }) => {
+  test("check task completion toggle works", async ({ page }) => {
     await page.waitForTimeout(16000);
-    console.log("h test 3");
+    console.log("check task completion toggle works");
   });
 
-  test("h test 4", async ({ page }) => {
+  test("ensure task deletion behaves correctly", async ({ page }) => {
     await page.waitForTimeout(16000);
-    console.log("h test 4");
+    console.log("ensure task deletion behaves correctly");
   });
 
-  test("h test 5", async ({ page }) => {
+  test("validate filters display correct tasks", async ({ page }) => {
     await page.waitForTimeout(16000);
-    console.log("h test 5");
+    console.log("validate filters display correct tasks");
   });
 });
 
 test.describe("h_2nd_describe", () => {
-  test("h test 6", async ({ page }) => {
+  test("ensure input field clears appropriately", async ({ page }) => {
     await page.waitForTimeout(16000);
-    console.log("h test 6");
+    console.log("ensure input field clears appropriately");
   });
 
-  test("h test 7", async ({ page }) => {
+  test("check completed tasks are marked", async ({ page }) => {
     await page.waitForTimeout(16000);
-    console.log("h test 7");
+    console.log("check completed tasks are marked");
   });
 
-  test("h test 8", async ({ page }) => {
+  test("test task editing functionality thoroughly", async ({ page }) => {
     await page.waitForTimeout(360000);
-    console.log("h test 8");
+    console.log("test task editing functionality thoroughly");
   });
 
-  test("h test 9", async ({ page }) => {
+  test("validate warning messages on errors", async ({ page }) => {
     await page.waitForTimeout(16000);
-    console.log("h test 9");
+    console.log("validate warning messages on errors");
   });
 
-  test("h test 10", async ({ page }) => {
+  test("confirm proper user feedback messages", async ({ page }) => {
     await page.waitForTimeout(16000);
-    console.log("h test 10");
+    console.log("confirm proper user feedback messages");
   });
 });
 
 test.describe("h_3rd_describe", () => {
-  test("h test 11", async ({ page }) => {
+  test("verify application stability during stress", async ({ page }) => {
     await page.waitForTimeout(16000);
-    console.log("h test 11");
+    console.log("verify application stability during stress");
   });
 
-  test("h test 12", async ({ page }) => {
+  test("check error handling for edge cases", async ({ page }) => {
     await page.waitForTimeout(16000);
-    console.log("h test 12");
+    console.log("check error handling for edge cases");
   });
 
-  test("h test 13", async ({ page }) => {
+  test("ensure data persistence across sessions", async ({ page }) => {
     await page.waitForTimeout(16000);
-    console.log("h test 13");
+    console.log("ensure data persistence across sessions");
   });
 
-  test("h test 14", async ({ page }) => {
+  test("validate task sorting works correctly", async ({ page }) => {
     await page.waitForTimeout(16000);
-    console.log("h test 14");
+    console.log("validate task sorting works correctly");
   });
 
-  test("h test 15", async ({ page }) => {
+  test("confirm application responsiveness on devices", async ({ page }) => {
     await page.waitForTimeout(16000);
-    console.log("h test 15");
+    console.log("confirm application responsiveness on devices");
   });
 });
 
 test.describe("h_4th_describe", () => {
-  test("h test 16", async ({ page }) => {
+  test("verify user authentication processes smoothly", async ({ page }) => {
     await page.waitForTimeout(16000);
-    console.log("h test 16");
+    console.log("verify user authentication processes smoothly");
   });
 
-  test("h test 17", async ({ page }) => {
+  test("confirm logout functionality behaves correctly", async ({ page }) => {
     await page.waitForTimeout(16000);
-    console.log("h test 17");
+    console.log("confirm logout functionality behaves correctly");
   });
 
-  test("h test 18", async ({ page }) => {
+  test("check API response times are acceptable", async ({ page }) => {
     await page.waitForTimeout(16000);
-    console.log("h test 18");
+    console.log("check API response times are acceptable");
   });
 
-  test("h test 19", async ({ page }) => {
+  test("ensure user settings save appropriately", async ({ page }) => {
     await page.waitForTimeout(16000);
-    console.log("h test 19");
+    console.log("ensure user settings save appropriately");
   });
 
-  test("h test 20", async ({ page }) => {
+  test("validate task prioritization functionality works", async ({ page }) => {
     await page.waitForTimeout(16000);
-    console.log("h test 20");
+    console.log("validate task prioritization functionality works");
   });
 });

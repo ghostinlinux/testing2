@@ -14,109 +14,109 @@ test.afterEach(async ({ page }, testInfo) => {
 });
 
 test.describe("j_1st_describe", () => {
-  test("j test 1", async ({ page }) => {
+  test("check task input functionality works", async ({ page }) => {
     await page.waitForTimeout(20000);
-    console.log("j test 1");
+    console.log("check task input functionality works");
   });
 
-  test("j test 2", async ({ page }) => {
+  test("ensure tasks display in order", async ({ page }) => {
     await page.waitForTimeout(20000);
-    console.log("j test 2");
+    console.log("ensure tasks display in order");
   });
 
-  test("j test 3", async ({ page }) => {
+  test("validate task deletion works properly", async ({ page }) => {
     await page.waitForTimeout(20000);
-    console.log("j test 3");
+    console.log("validate task deletion works properly");
   });
 
-  test("j test 4", async ({ page }) => {
+  test("confirm task completion updates visually", async ({ page }) => {
     await page.waitForTimeout(20000);
-    console.log("j test 4");
+    console.log("confirm task completion updates visually");
   });
 
-  test("j test 5", async ({ page }) => {
+  test("check filter shows active tasks", async ({ page }) => {
     await page.waitForTimeout(20000);
-    console.log("j test 5");
+    console.log("check filter shows active tasks");
   });
 });
 
 test.describe("j_2nd_describe", () => {
-  test("j test 6", async ({ page }) => {
+  test("verify error message displays correctly", async ({ page }) => {
     await page.waitForTimeout(20000);
-    console.log("j test 6");
+    console.log("verify error message displays correctly");
   });
 
-  test("j test 7", async ({ page }) => {
+  test("ensure completed tasks hide appropriately", async ({ page }) => {
     await page.waitForTimeout(20000);
-    console.log("j test 7");
+    console.log("ensure completed tasks hide appropriately");
   });
 
-  test("j test 8", async ({ page }) => {
+  test("check application responds to user actions", async ({ page }) => {
     await page.waitForTimeout(20000);
-    console.log("j test 8");
+    console.log("check application responds to user actions");
   });
 
-  test("j test 9", async ({ page }) => {
+  test("validate editing tasks works smoothly", async ({ page }) => {
     await page.waitForTimeout(20000);
-    console.log("j test 9");
+    console.log("validate editing tasks works smoothly");
   });
 
-  test("j test 10", async ({ page }) => {
+  test("ensure sorting function works correctly", async ({ page }) => {
     await page.waitForTimeout(20000);
-    console.log("j test 10");
+    console.log("ensure sorting function works correctly");
   });
 });
 
 test.describe("j_3rd_describe", () => {
-  test("j test 11", async ({ page }) => {
+  test("confirm user settings save correctly", async ({ page }) => {
     await page.waitForTimeout(20000);
-    console.log("j test 11");
+    console.log("confirm user settings save correctly");
   });
 
-  test("j test 12", async ({ page }) => {
+  test("check application stability under load", async ({ page }) => {
     await page.waitForTimeout(20000);
-    console.log("j test 12");
+    console.log("check application stability under load");
   });
 
-  test("j test 13", async ({ page }) => {
+  test("validate API calls respond correctly", async ({ page }) => {
     await page.waitForTimeout(20000);
-    console.log("j test 13");
+    console.log("validate API calls respond correctly");
   });
 
-  test("j test 14", async ({ page }) => {
+  test("ensure user authentication process works", async ({ page }) => {
     await page.waitForTimeout(20000);
-    console.log("j test 14");
+    console.log("ensure user authentication process works");
   });
 
-  test("j test 15", async ({ page }) => {
+  test("check logout functionality behaves correctly", async ({ page }) => {
     await page.waitForTimeout(20000);
-    console.log("j test 15");
+    console.log("check logout functionality behaves correctly");
   });
 });
 
 test.describe("j_4th_describe", () => {
-  test("j test 16", async ({ page }) => {
+  test("validate all tasks render correctly", async ({ page }) => {
     await page.waitForTimeout(20000);
-    console.log("j test 16");
+    console.log("validate all tasks render correctly");
   });
 
-  test("j test 17", async ({ page }) => {
+  test("ensure notifications show timely updates", async ({ page }) => {
     await page.waitForTimeout(20000);
-    console.log("j test 17");
+    console.log("ensure notifications show timely updates");
   });
 
-  test("j test 18", async ({ page }) => {
+  test("confirm task editing triggers updates", async ({ page }) => {
     await page.waitForTimeout(20000);
-    console.log("j test 18");
+    console.log("confirm task editing triggers updates");
   });
 
-  test("j test 19", async ({ page }) => {
+  test("check application layout adapts responsively", async ({ page }) => {
     await page.waitForTimeout(20000);
-    console.log("j test 19");
+    console.log("check application layout adapts responsively");
   });
 
-  test("j test 20", async ({ page }) => {
+  test("validate persistent data storage functions", async ({ page }) => {
     await page.waitForTimeout(20000);
-    console.log("j test 20");
+    console.log("validate persistent data storage functions");
   });
 });
