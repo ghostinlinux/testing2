@@ -1,802 +1,666 @@
 [
   {
-    "test": "explore the new functionality today",
-    "executionTime": 2.284
+    "test": "llong should long allow me to add todo items",
+    "executionTime": 65.425
   },
   {
-    "test": "validate the response from server",
-    "executionTime": 2.213
+    "test": "long should long clear text input field when an item is added",
+    "executionTime": 420.275
   },
   {
-    "test": "analyze the output for correctness",
-    "executionTime": 2.21
+    "test": "long should long append new items to the bottom of the list",
+    "executionTime": 45.333
   },
   {
-    "test": "test all scenarios thoroughly today",
-    "executionTime": 2.243
+    "test": "long should long allow me to mark all items as completed",
+    "executionTime": 30.354
   },
   {
-    "test": "verify all elements on page",
-    "executionTime": 2.222
+    "test": "long should long allow me to clear the complete state of all items",
+    "executionTime": 60.381
   },
   {
-    "test": "check performance under heavy load",
-    "executionTime": 2.243
+    "test": "long complete all along along checkbox should update state when items are completed / cleared",
+    "executionTime": 70.462
   },
   {
-    "test": "confirm actions are properly executed",
-    "executionTime": 2.207
+    "test": "long should long allow me to mark items as complete",
+    "executionTime": 60.365
   },
   {
-    "test": "assess usability for new features",
-    "executionTime": 2.218
+    "test": "long should long allow me to un-mark items as complete",
+    "executionTime": 0.377
   },
   {
-    "test": "execute scripts for testing purposes",
-    "executionTime": 2.222
+    "test": "long should long allow me to edit an item",
+    "executionTime": 0.371
   },
   {
-    "test": "inspect features for possible improvements",
-    "executionTime": 2.204
+    "test": "long should long hide other controls when editing",
+    "executionTime": 60.323
   },
   {
-    "test": "determine behavior under various conditions",
-    "executionTime": 2.198
+    "test": "long should long save edits on blur",
+    "executionTime": 30.339
   },
   {
-    "test": "examine logic to ensure accuracy",
-    "executionTime": 2.211
+    "test": "long should long trim entered text",
+    "executionTime": 10.363
   },
   {
-    "test": "monitor changes in application state",
-    "executionTime": 2.197
+    "test": "long should long remove the item if an empty text string was entered",
+    "executionTime": 40.341
   },
   {
-    "test": "validate data for consistency issues",
-    "executionTime": 2.195
+    "test": "long should long cancel edits on escape",
+    "executionTime": 0.38
   },
   {
-    "test": "gather metrics to improve performance",
-    "executionTime": 2.221
+    "test": "long should long display the current number of todo items",
+    "executionTime": 0.266
   },
   {
-    "test": "review outcomes from previous tests",
-    "executionTime": 2.211
+    "test": "long should long display the correct text",
+    "executionTime": 0.318
   },
   {
-    "test": "evaluate scenarios for unexpected behavior",
-    "executionTime": 2.199
+    "test": "long should long remove completed items when clicked",
+    "executionTime": 0.365
   },
   {
-    "test": "analyze details to identify issues",
-    "executionTime": 2.212
+    "test": "long should abbzlong allow me to edit an item",
+    "executionTime": 0.577
   },
   {
-    "test": "summarize findings for future reference",
-    "executionTime": 2.198
+    "test": "long should abbzlong hide other controls when editing",
+    "executionTime": 60.382
   },
   {
-    "test": "check compatibility with all devices",
-    "executionTime": 2.204
+    "test": "long should abbzlong save edits on blur",
+    "executionTime": 30.447
   },
   {
-    "test": "check task input functionality works",
-    "executionTime": 20.308
+    "test": "long should abbzlong trim entered text",
+    "executionTime": 10.42
   },
   {
-    "test": "ensure tasks display in order",
-    "executionTime": 20.205
+    "test": "long should abbzlong remove the item if an empty text string was entered",
+    "executionTime": 40.357
   },
   {
-    "test": "validate task deletion works properly",
-    "executionTime": 20.197
+    "test": "long should abbzlong cancel edits on escape",
+    "executionTime": 0.36
   },
   {
-    "test": "confirm task completion updates visually",
-    "executionTime": 20.275
+    "test": "long should abbzlong display the current number of todo items",
+    "executionTime": 0.283
   },
   {
-    "test": "check filter shows active tasks",
-    "executionTime": 20.195
+    "test": "long should abbzlong display the correct text",
+    "executionTime": 0.329
   },
   {
-    "test": "verify error message displays correctly",
-    "executionTime": 20.292
+    "test": "long should abbzlong remove completed items when clicked",
+    "executionTime": 0.38
   },
   {
-    "test": "ensure completed tasks hide appropriately",
-    "executionTime": 20.194
+    "test": "long should abbzlong be hidden when there are no items that are completed",
+    "executionTime": 0.378
   },
   {
-    "test": "check application responds to user actions",
-    "executionTime": 20.208
+    "test": "long should abbzlong persist its data",
+    "executionTime": 0.408
   },
   {
-    "test": "validate editing tasks works smoothly",
-    "executionTime": 20.186
+    "test": "long should abbzlong allow me to display active items",
+    "executionTime": 0.385
   },
   {
-    "test": "ensure sorting function works correctly",
-    "executionTime": 20.199
+    "test": "long should abbzlong respect the back button",
+    "executionTime": 25.491
   },
   {
-    "test": "confirm user settings save correctly",
-    "executionTime": 20.271
+    "test": "long should abbzlong allow me to display completed items",
+    "executionTime": 40.383
   },
   {
-    "test": "check application stability under load",
-    "executionTime": 20.181
+    "test": "long should abbzlong allow me to display all items",
+    "executionTime": 0.433
   },
   {
-    "test": "validate API calls respond correctly",
-    "executionTime": 20.181
+    "test": "long should abbzlong highlight the currently applied filter",
+    "executionTime": 5.375
   },
   {
-    "test": "ensure user authentication process works",
-    "executionTime": 20.191
+    "test": "long should long be hidden when there are no items that are completed",
+    "executionTime": 0.859
   },
   {
-    "test": "check logout functionality behaves correctly",
-    "executionTime": 20.19
+    "test": "long should long persist its data",
+    "executionTime": 0.408
   },
   {
-    "test": "validate all tasks render correctly",
-    "executionTime": 20.344
+    "test": "long should long allow me to display active items",
+    "executionTime": 0.384
   },
   {
-    "test": "ensure notifications show timely updates",
-    "executionTime": 20.193
+    "test": "long should long respect the back button",
+    "executionTime": 25.853
   },
   {
-    "test": "confirm task editing triggers updates",
-    "executionTime": 20.279
+    "test": "long should long allow me to display completed items",
+    "executionTime": 40.42
   },
   {
-    "test": "check application layout adapts responsively",
-    "executionTime": 20.266
+    "test": "long should long allow me to display all items",
+    "executionTime": 0.572
   },
   {
-    "test": "validate persistent data storage functions",
-    "executionTime": 20.281
+    "test": "long should long highlight the currently applied filter",
+    "executionTime": 5.545
   },
   {
-    "test": "verify application functionality under load",
-    "executionTime": 4.313
+    "test": "llong should ablong allow me to add todo items",
+    "executionTime": 65.283
   },
   {
-    "test": "confirm user interactions are effective",
-    "executionTime": 4.228
+    "test": "long should ablong clear text input field when an item is added",
+    "executionTime": 40.332
   },
   {
-    "test": "assess performance metrics for responsiveness",
-    "executionTime": 4.207
+    "test": "long should ablong append new items to the bottom of the list",
+    "executionTime": 45.427
   },
   {
-    "test": "test navigation flow across screens",
-    "executionTime": 4.211
+    "test": "long should ablong allow me to mark all items as completed",
+    "executionTime": 30.434
   },
   {
-    "test": "analyze data processing for efficiency",
-    "executionTime": 4.201
+    "test": "long should ablong allow me to clear the complete state of all items",
+    "executionTime": 60.475
   },
   {
-    "test": "evaluate responsiveness on various devices",
-    "executionTime": 4.205
+    "test": "long complete all ablong along checkbox should update state when items are completed / cleared",
+    "executionTime": 70.545
   },
   {
-    "test": "simulate multiple users accessing application",
-    "executionTime": 120.212
+    "test": "long should ablong allow me to mark items as complete",
+    "executionTime": 60.462
   },
   {
-    "test": "verify all buttons trigger actions",
-    "executionTime": 4.203
+    "test": "long should ablong allow me to un-mark items as complete",
+    "executionTime": 0.456
   },
   {
-    "test": "ensure inputs validate as expected",
-    "executionTime": 4.2
+    "test": "long should ablong allow me to edit an item",
+    "executionTime": 0.35
   },
   {
-    "test": "check error handling in edge cases",
-    "executionTime": 4.226
+    "test": "long should ablong hide other controls when editing",
+    "executionTime": 60.339
   },
   {
-    "test": "test loading speed for resources",
-    "executionTime": 4.209
+    "test": "long should ablong save edits on blur",
+    "executionTime": 30.63
   },
   {
-    "test": "confirm stability under heavy stress",
-    "executionTime": 4.198
+    "test": "long should ablong trim entered text",
+    "executionTime": 10.485
   },
   {
-    "test": "validate all navigation elements exist",
-    "executionTime": 4.209
+    "test": "long should ablong remove the item if an empty text string was entered",
+    "executionTime": 40.399
   },
   {
-    "test": "ensure accessibility features are present",
-    "executionTime": 4.202
+    "test": "long should ablong cancel edits on escape",
+    "executionTime": 0.394
   },
   {
-    "test": "monitor performance during long sessions",
-    "executionTime": 4.202
+    "test": "long should ablong display the current number of todo items",
+    "executionTime": 0.311
   },
   {
-    "test": "evaluate user feedback and suggestions",
-    "executionTime": 4.207
+    "test": "long should ablong display the correct text",
+    "executionTime": 0.372
   },
   {
-    "test": "test various input combinations thoroughly",
-    "executionTime": 4.207
+    "test": "long should ablong remove completed items when clicked",
+    "executionTime": 0.43
   },
   {
-    "test": "check system logs for errors",
-    "executionTime": 4.222
+    "test": "long should ablong be hidden when there are no items that are completed",
+    "executionTime": 0.415
   },
   {
-    "test": "review test results for accuracy",
-    "executionTime": 4.201
+    "test": "long should ablong persist its data",
+    "executionTime": 0.444
   },
   {
-    "test": "summarize findings for future improvements",
-    "executionTime": 4.201
+    "test": "long should ablong allow me to display active items",
+    "executionTime": 0.442
   },
   {
-    "test": "check application loads successfully now",
-    "executionTime": 6.383
+    "test": "long should ablong respect the back button",
+    "executionTime": 300.533
   },
   {
-    "test": "verify user input behaves correctly",
-    "executionTime": 6.249
+    "test": "long should ablong allow me to display completed items",
+    "executionTime": 40.421
   },
   {
-    "test": "ensure all buttons trigger actions",
-    "executionTime": 6.271
+    "test": "long should ablong allow me to display all items",
+    "executionTime": 0.48
   },
   {
-    "test": "confirm navigation works as expected",
-    "executionTime": 6.244
+    "test": "long should ablong highlight the currently applied filter",
+    "executionTime": 5.391
   },
   {
-    "test": "validate user interface components function",
-    "executionTime": 6.229
+    "test": "llong should abblong allow me to add todo items",
+    "executionTime": 600.314
   },
   {
-    "test": "assess performance under heavy load",
-    "executionTime": 6.284
+    "test": "long should abblong clear text input field when an item is added",
+    "executionTime": 40.29
   },
   {
-    "test": "simulate multiple user scenarios effectively",
-    "executionTime": 6.258
+    "test": "long should abblong append new items to the bottom of the list",
+    "executionTime": 45.338
   },
   {
-    "test": "check error handling across inputs",
-    "executionTime": 6.259
+    "test": "long should abblong allow me to mark all items as completed",
+    "executionTime": 30.624
   },
   {
-    "test": "test application behavior during timeout",
-    "executionTime": 6.281
+    "test": "long should abblong allow me to clear the complete state of all items",
+    "executionTime": 60.48
   },
   {
-    "test": "confirm all links redirect properly",
-    "executionTime": 6.268
+    "test": "long should abblong allow me to mark items as complete",
+    "executionTime": 60.426
   },
   {
-    "test": "monitor application responsiveness on devices",
-    "executionTime": 6.275
+    "test": "long should abblong allow me to un-mark items as complete",
+    "executionTime": 0.414
   },
   {
-    "test": "validate all features work seamlessly",
-    "executionTime": 6.262
+    "test": "long should abblong allow me to edit an item",
+    "executionTime": 0.458
   },
   {
-    "test": "analyze logs for performance insights",
-    "executionTime": 6.244
+    "test": "long should abblong hide other controls when editing",
+    "executionTime": 60.415
   },
   {
-    "test": "review test cases for accuracy",
-    "executionTime": 6.274
+    "test": "long should abblong save edits on blur",
+    "executionTime": 30.493
   },
   {
-    "test": "evaluate user feedback for enhancements",
-    "executionTime": 6.241
+    "test": "long should abblong trim entered text",
+    "executionTime": 10.421
   },
   {
-    "test": "ensure all user flows function correctly",
-    "executionTime": 6.246
+    "test": "long should abblong remove the item if an empty text string was entered",
+    "executionTime": 40.425
   },
   {
-    "test": "check application behavior during stress",
-    "executionTime": 6.272
+    "test": "long should abblong cancel edits on escape",
+    "executionTime": 0.417
   },
   {
-    "test": "test various input combinations thoroughly",
-    "executionTime": 6.221
+    "test": "long should abblong display the current number of todo items",
+    "executionTime": 0.301
   },
   {
-    "test": "confirm stability during prolonged sessions",
-    "executionTime": 6.239
+    "test": "long should abblong display the correct text",
+    "executionTime": 0.35
   },
   {
-    "test": "summarize results for future reference",
-    "executionTime": 6.263
+    "test": "long should abblong remove completed items when clicked",
+    "executionTime": 0.456
   },
   {
-    "test": "confirm homepage loads without errors",
-    "executionTime": 8.309
+    "test": "long should abblong be hidden when there are no items that are completed",
+    "executionTime": 0.416
   },
   {
-    "test": "check task creation functionality works",
-    "executionTime": 8.249
+    "test": "long should abblong persist its data",
+    "executionTime": 0.435
   },
   {
-    "test": "ensure user can delete tasks",
-    "executionTime": 8.229
+    "test": "long should abblong allow me to display active items",
+    "executionTime": 0.445
   },
   {
-    "test": "validate task editing process functions",
-    "executionTime": 8.228
+    "test": "long should abblong respect the back button",
+    "executionTime": 25.519
   },
   {
-    "test": "verify task completion toggles correctly",
-    "executionTime": 8.223
+    "test": "long should abblong allow me to display completed items",
+    "executionTime": 40.62
   },
   {
-    "test": "assess performance under heavy load",
-    "executionTime": 8.224
+    "test": "long should abblong allow me to display all items",
+    "executionTime": 0.582
   },
   {
-    "test": "simulate multiple user scenarios effectively",
-    "executionTime": 8.214
+    "test": "long should abblong highlight the currently applied filter",
+    "executionTime": 5.458
   },
   {
-    "test": "check error handling across inputs",
-    "executionTime": 8.207
+    "test": "ong bshould long allow me to add todo items",
+    "executionTime": 600.421
   },
   {
-    "test": "test application behavior during timeout",
-    "executionTime": 8.211
+    "test": "ong bshould long clear text input field when an item is added",
+    "executionTime": 40.365
   },
   {
-    "test": "confirm all links redirect properly",
-    "executionTime": 8.219
+    "test": "ong bshould long append new items to the bottom of the list",
+    "executionTime": 45.372
   },
   {
-    "test": "monitor application responsiveness on devices",
-    "executionTime": 8.211
+    "test": "ong bshould long allow me to mark all items as completed",
+    "executionTime": 30.407
   },
   {
-    "test": "validate all features work seamlessly",
-    "executionTime": 8.21
+    "test": "ong bshould long allow me to clear the complete state of all items",
+    "executionTime": 60.473
   },
   {
-    "test": "analyze logs for performance insights",
-    "executionTime": 8.222
+    "test": "long complete all blong checkbox should update state when items are completed / cleared",
+    "executionTime": 70.527
   },
   {
-    "test": "review test cases for accuracy",
-    "executionTime": 8.223
+    "test": "ong bshould long allow me to mark items as complete",
+    "executionTime": 60.396
   },
   {
-    "test": "evaluate user feedback for enhancements",
-    "executionTime": 8.207
+    "test": "ong bshould long allow me to un-mark items as complete",
+    "executionTime": 0.434
   },
   {
-    "test": "ensure all user flows function correctly",
-    "executionTime": 8.212
+    "test": "ong bshould long allow me to edit an item",
+    "executionTime": 0.445
   },
   {
-    "test": "check application behavior during stress",
-    "executionTime": 240.217
+    "test": "ong bshould long hide other controls when editing",
+    "executionTime": 60.396
   },
   {
-    "test": "test various input combinations thoroughly",
-    "executionTime": 8.222
+    "test": "ong bshould long save edits on blur",
+    "executionTime": 30.433
   },
   {
-    "test": "confirm stability during prolonged sessions",
-    "executionTime": 8.218
+    "test": "ong bshould long trim entered text",
+    "executionTime": 10.421
   },
   {
-    "test": "summarize results for future reference",
-    "executionTime": 8.22
+    "test": "ong bshould long remove the item if an empty text string was entered",
+    "executionTime": 40.426
   },
   {
-    "test": "validate user login functionality works",
-    "executionTime": 10.268
+    "test": "ong bshould long cancel edits on escape",
+    "executionTime": 0.464
   },
   {
-    "test": "ensure task addition is successful",
-    "executionTime": 10.199
+    "test": "ong bshould long display the current number of todo items",
+    "executionTime": 0.498
   },
   {
-    "test": "confirm user can mark tasks",
-    "executionTime": 10.18
+    "test": "ong bshould long display the correct text",
+    "executionTime": 0.405
   },
   {
-    "test": "test application behavior with errors",
-    "executionTime": 10.187
+    "test": "ong bshould long remove completed items when clicked",
+    "executionTime": 0.456
   },
   {
-    "test": "verify task deletion process works",
-    "executionTime": 10.205
+    "test": "ong bshould long be hidden when there are no items that are completed",
+    "executionTime": 0.439
   },
   {
-    "test": "assess page load performance metrics",
-    "executionTime": 10.178
+    "test": "ong bshould long persist its data",
+    "executionTime": 0.454
   },
   {
-    "test": "simulate concurrent user actions smoothly",
-    "executionTime": 10.205
+    "test": "ong bshould long allow me to display active items",
+    "executionTime": 0.436
   },
   {
-    "test": "check navigation through all links",
-    "executionTime": 10.225
+    "test": "ong bshould long respect the back button",
+    "executionTime": 25.52
   },
   {
-    "test": "validate error messages for users",
-    "executionTime": 10.183
+    "test": "ong bshould long allow me to display completed items",
+    "executionTime": 40.485
   },
   {
-    "test": "confirm application handles edge cases",
-    "executionTime": 10.182
+    "test": "ong bshould long allow me to display all items",
+    "executionTime": 0.559
   },
   {
-    "test": "monitor system resource usage accurately",
-    "executionTime": 10.181
+    "test": "ong bshould long highlight the currently applied filter",
+    "executionTime": 5.478
   },
   {
-    "test": "validate input field requirements thoroughly",
-    "executionTime": 10.176
+    "test": "short should short allow me to add todo items",
+    "executionTime": 0.336
   },
   {
-    "test": "test user interface responsiveness effectively",
-    "executionTime": 10.183
+    "test": "short should short clear text input field when an item is added",
+    "executionTime": 0.316
   },
   {
-    "test": "analyze backend performance during tests",
-    "executionTime": 10.191
+    "test": "short should short append new items to the bottom of the list",
+    "executionTime": 0.367
   },
   {
-    "test": "review feedback for future improvements",
-    "executionTime": 10.182
+    "test": "short should short allow me to mark all items as completed",
+    "executionTime": 0.408
   },
   {
-    "test": "ensure user flows operate without issues",
-    "executionTime": 10.18
+    "test": "short should short allow me to clear the complete state of all items",
+    "executionTime": 0.422
   },
   {
-    "test": "check application stability under load",
-    "executionTime": 10.185
+    "test": "complete all clong short checkbox should update state when items are completed / cleared",
+    "executionTime": 0.497
   },
   {
-    "test": "validate cross-browser compatibility thoroughly",
-    "executionTime": 10.182
+    "test": "short should short allow me to mark items as complete",
+    "executionTime": 0.386
   },
   {
-    "test": "confirm all features are accessible easily",
-    "executionTime": 10.187
+    "test": "short should short allow me to un-mark items as complete",
+    "executionTime": 0.659
   },
   {
-    "test": "summarize testing results for reporting",
-    "executionTime": 10.18
+    "test": "short should short allow me to edit an item",
+    "executionTime": 0.5
   },
   {
-    "test": "validate form submission is successful",
-    "executionTime": 12.335
+    "test": "short should short hide other controls when editing",
+    "executionTime": 0.41
   },
   {
-    "test": "ensure proper data validation occurs",
-    "executionTime": 12.283
+    "test": "short should short save edits on blur",
+    "executionTime": 0.417
   },
   {
-    "test": "confirm error messages display correctly",
-    "executionTime": 12.226
+    "test": "short should short trim entered text",
+    "executionTime": 0.442
   },
   {
-    "test": "test loading of dynamic content",
-    "executionTime": 12.254
+    "test": "short should short remove the item if an empty text string was entered",
+    "executionTime": 0.414
   },
   {
-    "test": "verify user interface reacts smoothly",
-    "executionTime": 12.264
+    "test": "short should short cancel edits on escape",
+    "executionTime": 0.401
   },
   {
-    "test": "assess responsiveness across multiple devices",
-    "executionTime": 12.237
+    "test": "short should short display the current number of todo items",
+    "executionTime": 0.342
   },
   {
-    "test": "check for accessibility compliance thoroughly",
-    "executionTime": 12.27
+    "test": "short should short display the correct text",
+    "executionTime": 0.39
   },
   {
-    "test": "validate API response times effectively",
-    "executionTime": 12.254
+    "test": "short should short remove completed items when clicked",
+    "executionTime": 0.413
   },
   {
-    "test": "ensure database connections are reliable",
-    "executionTime": 180.232
+    "test": "short should short be hidden when there are no items that are completed",
+    "executionTime": 0.441
   },
   {
-    "test": "confirm all user actions are logged",
-    "executionTime": 12.284
+    "test": "short should short persist its data",
+    "executionTime": 0.506
   },
   {
-    "test": "test application stability during load",
-    "executionTime": 12.244
+    "test": "short should short allow me to display active items",
+    "executionTime": 0.434
   },
   {
-    "test": "validate error handling mechanisms effectively",
-    "executionTime": 12.213
+    "test": "short should short respect the back button",
+    "executionTime": 0.543
   },
   {
-    "test": "assess functionality of admin panel tools",
-    "executionTime": 12.235
+    "test": "short should short allow me to display completed items",
+    "executionTime": 0.453
   },
   {
-    "test": "ensure session timeouts are enforced",
-    "executionTime": 12.259
+    "test": "short should short allow me to display all items",
+    "executionTime": 0.474
   },
   {
-    "test": "review audit logs for any issues",
-    "executionTime": 12.222
+    "test": "short should short highlight the currently applied filter",
+    "executionTime": 0.67
   },
   {
-    "test": "verify integration with third-party services",
-    "executionTime": 12.27
+    "test": "should allow me to add todo items",
+    "executionTime": 50.343
   },
   {
-    "test": "test user registration process thoroughly",
-    "executionTime": 12.229
+    "test": "should clear text input field when an item is added",
+    "executionTime": 30.332
   },
   {
-    "test": "validate password reset functionality works",
-    "executionTime": 12.248
+    "test": "should append new items to the bottom of the list",
+    "executionTime": 40.379
   },
   {
-    "test": "ensure proper localization and translations",
-    "executionTime": 12.258
+    "test": "should allow me to mark all items as completed",
+    "executionTime": 20.393
   },
   {
-    "test": "check that all links are functional",
-    "executionTime": 12.222
+    "test": "should allow me to clear the complete state of all items",
+    "executionTime": 10.476
   },
   {
-    "test": "confirm correct form submission works",
-    "executionTime": 14.318
+    "test": "complete all checkbox should update state when items are completed / cleared",
+    "executionTime": 30.507
   },
   {
-    "test": "validate user inputs and feedback",
-    "executionTime": 14.477
+    "test": "should allow me to mark items as complete",
+    "executionTime": 0.396
   },
   {
-    "test": "check validation messages for errors",
-    "executionTime": 14.29
+    "test": "should allow me to un-mark items as complete",
+    "executionTime": 0.41
   },
   {
-    "test": "ensure loading dynamic elements functions",
-    "executionTime": 14.185
+    "test": "should allow me to edit an item",
+    "executionTime": 0.417
   },
   {
-    "test": "assess performance under heavy load",
-    "executionTime": 14.191
+    "test": "should hide other controls when editing",
+    "executionTime": 60.382
   },
   {
-    "test": "verify responsive design on mobile",
-    "executionTime": 14.201
+    "test": "should save edits on blur",
+    "executionTime": 30.415
   },
   {
-    "test": "check color contrast for accessibility",
-    "executionTime": 14.192
+    "test": "should trim entered text",
+    "executionTime": 10.419
   },
   {
-    "test": "test API response times effectively",
-    "executionTime": 14.187
+    "test": "should remove the item if an empty text string was entered",
+    "executionTime": 40.409
   },
   {
-    "test": "assess database interactions for efficiency",
-    "executionTime": 14.216
+    "test": "should cancel edits on escape",
+    "executionTime": 0.449
   },
   {
-    "test": "ensure all user actions are logged",
-    "executionTime": 14.284
+    "test": "should display the current number of todo items",
+    "executionTime": 0.321
   },
   {
-    "test": "validate application stability during testing",
-    "executionTime": 14.186
+    "test": "should display the correct text",
+    "executionTime": 0.526
   },
   {
-    "test": "check for proper error handling response",
-    "executionTime": 14.299
+    "test": "should remove completed items when clicked",
+    "executionTime": 0.419
   },
   {
-    "test": "review admin panel functionality thoroughly",
-    "executionTime": 14.269
+    "test": "should be hidden when there are no items that are completed",
+    "executionTime": 0.389
   },
   {
-    "test": "ensure session timeouts are functional",
-    "executionTime": 14.189
+    "test": "should persist its data",
+    "executionTime": 0.423
   },
   {
-    "test": "test audit logs for issues effectively",
-    "executionTime": 14.188
+    "test": "should allow me to display active items",
+    "executionTime": 0.417
   },
   {
-    "test": "verify integration with external services",
-    "executionTime": 14.306
+    "test": "should respect the back button",
+    "executionTime": 25.512
   },
   {
-    "test": "confirm user registration processes are smooth",
-    "executionTime": 14.198
+    "test": "should allow me to display completed items",
+    "executionTime": 40.437
   },
   {
-    "test": "validate functionality of password resets",
-    "executionTime": 14.262
+    "test": "should allow me to display all items",
+    "executionTime": 0.505
   },
   {
-    "test": "check localization and translation accuracy",
-    "executionTime": 14.273
+    "test": "should highlight the currently applied filter",
+    "executionTime": 5.454
   },
   {
-    "test": "ensure all hyperlinks are functional",
-    "executionTime": 14.18
+    "test": "llong should abbzlong allow me to add todo items",
+    "executionTime": 65.289
   },
   {
-    "test": "confirm page loads without errors",
-    "executionTime": 16.578
+    "test": "long should abbzlong clear text input field when an item is added",
+    "executionTime": 40.264
   },
   {
-    "test": "verify task addition functionality works",
-    "executionTime": 16.195
+    "test": "long should abbzlong append new items to the bottom of the list",
+    "executionTime": 420.329
   },
   {
-    "test": "check task completion toggle works",
-    "executionTime": 16.194
+    "test": "long should abbzlong allow me to mark all items as completed",
+    "executionTime": 30.609
   },
   {
-    "test": "ensure task deletion behaves correctly",
-    "executionTime": 16.189
+    "test": "long should abbzlong allow me to clear the complete state of all items",
+    "executionTime": 300.556
   },
   {
-    "test": "validate filters display correct tasks",
-    "executionTime": 16.286
+    "test": "long should abbzlong allow me to mark items as complete",
+    "executionTime": 60.455
   },
   {
-    "test": "ensure input field clears appropriately",
-    "executionTime": 16.188
-  },
-  {
-    "test": "check completed tasks are marked",
-    "executionTime": 16.292
-  },
-  {
-    "test": "test task editing functionality thoroughly",
-    "executionTime": 360.247
-  },
-  {
-    "test": "validate warning messages on errors",
-    "executionTime": 16.271
-  },
-  {
-    "test": "confirm proper user feedback messages",
-    "executionTime": 16.292
-  },
-  {
-    "test": "verify application stability during stress",
-    "executionTime": 16.184
-  },
-  {
-    "test": "check error handling for edge cases",
-    "executionTime": 16.267
-  },
-  {
-    "test": "ensure data persistence across sessions",
-    "executionTime": 16.284
-  },
-  {
-    "test": "validate task sorting works correctly",
-    "executionTime": 16.181
-  },
-  {
-    "test": "confirm application responsiveness on devices",
-    "executionTime": 16.267
-  },
-  {
-    "test": "verify user authentication processes smoothly",
-    "executionTime": 16.27
-  },
-  {
-    "test": "confirm logout functionality behaves correctly",
-    "executionTime": 16.361
-  },
-  {
-    "test": "check API response times are acceptable",
-    "executionTime": 16.267
-  },
-  {
-    "test": "ensure user settings save appropriately",
-    "executionTime": 16.484
-  },
-  {
-    "test": "validate task prioritization functionality works",
-    "executionTime": 16.185
-  },
-  {
-    "test": "check application loads without errors",
-    "executionTime": 18.723
-  },
-  {
-    "test": "validate task creation process smoothly",
-    "executionTime": 18.242
-  },
-  {
-    "test": "ensure tasks can be edited",
-    "executionTime": 18.541
-  },
-  {
-    "test": "confirm tasks can be deleted",
-    "executionTime": 18.217
-  },
-  {
-    "test": "check filtering displays correct tasks",
-    "executionTime": 18.33
-  },
-  {
-    "test": "ensure input field clears correctly",
-    "executionTime": 18.241
-  },
-  {
-    "test": "verify completed tasks are shown",
-    "executionTime": 18.303
-  },
-  {
-    "test": "check sorting of tasks accurately",
-    "executionTime": 18.216
-  },
-  {
-    "test": "validate user feedback on errors",
-    "executionTime": 18.316
-  },
-  {
-    "test": "ensure application is responsive and stable",
-    "executionTime": 18.216
-  },
-  {
-    "test": "confirm tasks can be prioritized",
-    "executionTime": 18.325
-  },
-  {
-    "test": "check error handling for unexpected cases",
-    "executionTime": 18.215
-  },
-  {
-    "test": "ensure user settings save correctly",
-    "executionTime": 18.308
-  },
-  {
-    "test": "validate application performance under load",
-    "executionTime": 18.214
-  },
-  {
-    "test": "verify API responses meet expectations",
-    "executionTime": 18.303
-  },
-  {
-    "test": "check user authentication processes smoothly",
-    "executionTime": 18.215
-  },
-  {
-    "test": "ensure logout functionality behaves correctly",
-    "executionTime": 18.322
-  },
-  {
-    "test": "confirm user can edit profile",
-    "executionTime": 18.226
-  },
-  {
-    "test": "validate task completion updates correctly",
-    "executionTime": 18.31
-  },
-  {
-    "test": "check for successful data persistence",
-    "executionTime": 18.228
+    "test": "long should abbzlong allow me to un-mark items as complete",
+    "executionTime": 0.672
   }
 ]
