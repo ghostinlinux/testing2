@@ -20,7 +20,7 @@ test.describe("a_1st_describe", () => {
   });
 
   test("validate the response from server", async ({ page }) => {
-    await page.waitForTimeout(2000);
+    await page.waitForTimeout(4000);
     console.log("validate the response from server");
   });
 

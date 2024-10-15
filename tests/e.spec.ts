@@ -96,7 +96,7 @@ test.describe("e_3rd_describe", () => {
 
 test.describe("e_4th_describe", () => {
   test("ensure user flows operate without issues", async ({ page }) => {
-    await page.waitForTimeout(10000);
+    await page.waitForTimeout(11000);
     console.log("ensure user flows operate without issues");
   });
 
