@@ -1,7 +1,7 @@
 {
   "type": "module",
   "dependencies": {
-    "sharding-pk-play": "^1.0.3"
+    "sharding-pk-play": "^1.0.4"
   },
   "devDependencies": {
     "@playwright/test": "^1.48.0",
