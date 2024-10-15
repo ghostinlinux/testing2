@@ -1,402 +1,402 @@
 [
   {
     "test": "a test 1",
-    "executionTime": 2.492
+    "executionTime": 2.695
   },
   {
     "test": "a test 2",
-    "executionTime": 2.189
+    "executionTime": 2.225
   },
   {
     "test": "a test 3",
-    "executionTime": 2.19
+    "executionTime": 2.221
   },
   {
     "test": "a test 4",
-    "executionTime": 2.552
+    "executionTime": 2.23
   },
   {
     "test": "a test 5",
-    "executionTime": 2.2
+    "executionTime": 2.239
   },
   {
     "test": "a test 6",
-    "executionTime": 2.184
+    "executionTime": 2.223
   },
   {
     "test": "a test 7",
-    "executionTime": 2.19
+    "executionTime": 2.244
   },
   {
     "test": "a test 8",
-    "executionTime": 2.181
+    "executionTime": 2.225
   },
   {
     "test": "a test 9",
-    "executionTime": 2.177
+    "executionTime": 2.22
   },
   {
     "test": "a test 10",
-    "executionTime": 2.19
+    "executionTime": 2.217
   },
   {
     "test": "a test 11",
-    "executionTime": 2.196
+    "executionTime": 2.21
   },
   {
     "test": "a test 12",
-    "executionTime": 2.186
+    "executionTime": 2.217
   },
   {
     "test": "a test 13",
-    "executionTime": 2.189
+    "executionTime": 2.226
   },
   {
     "test": "a test 14",
-    "executionTime": 2.174
+    "executionTime": 2.216
   },
   {
     "test": "a test 15",
-    "executionTime": 2.289
+    "executionTime": 2.304
   },
   {
     "test": "a test 16",
-    "executionTime": 2.184
+    "executionTime": 2.22
   },
   {
     "test": "a test 17",
-    "executionTime": 2.19
+    "executionTime": 2.219
   },
   {
     "test": "a test 18",
-    "executionTime": 2.184
+    "executionTime": 2.212
   },
   {
     "test": "a test 19",
-    "executionTime": 2.176
+    "executionTime": 2.215
   },
   {
     "test": "a test 20",
-    "executionTime": 2.179
+    "executionTime": 2.215
   },
   {
     "test": "b test 6",
-    "executionTime": 20.34
+    "executionTime": 20.295
   },
   {
     "test": "b test 7",
-    "executionTime": 20.222
+    "executionTime": 20.193
   },
   {
     "test": "b test 8",
-    "executionTime": 20.222
+    "executionTime": 20.191
   },
   {
     "test": "b test 9",
-    "executionTime": 20.198
+    "executionTime": 20.186
   },
   {
     "test": "b test 10",
-    "executionTime": 20.239
+    "executionTime": 20.188
   },
   {
     "test": "b test 11",
-    "executionTime": 4.204
+    "executionTime": 4.196
   },
   {
     "test": "b test 12",
-    "executionTime": 4.209
+    "executionTime": 4.185
   },
   {
     "test": "b test 13",
-    "executionTime": 4.203
+    "executionTime": 4.181
   },
   {
     "test": "b test 14",
-    "executionTime": 4.206
+    "executionTime": 4.185
   },
   {
     "test": "b test 15",
-    "executionTime": 4.211
+    "executionTime": 4.176
   },
   {
     "test": "b test 16",
-    "executionTime": 4.199
+    "executionTime": 4.18
   },
   {
     "test": "b test 17",
-    "executionTime": 4.195
+    "executionTime": 4.178
   },
   {
     "test": "b test 18",
-    "executionTime": 4.197
+    "executionTime": 4.181
   },
   {
     "test": "b test 19",
-    "executionTime": 4.204
+    "executionTime": 4.177
   },
   {
     "test": "b test 20",
-    "executionTime": 4.199
+    "executionTime": 4.18
   },
   {
     "test": "c test 11",
-    "executionTime": 6.373
+    "executionTime": 6.31
   },
   {
     "test": "c test 12",
-    "executionTime": 6.273
+    "executionTime": 6.202
   },
   {
     "test": "c test 13",
-    "executionTime": 6.263
+    "executionTime": 6.201
   },
   {
     "test": "c test 14",
-    "executionTime": 6.247
+    "executionTime": 6.182
   },
   {
     "test": "c test 15",
-    "executionTime": 6.241
+    "executionTime": 6.198
   },
   {
     "test": "c test 16",
-    "executionTime": 6.285
+    "executionTime": 6.221
   },
   {
     "test": "c test 17",
-    "executionTime": 6.248
+    "executionTime": 6.186
   },
   {
     "test": "c test 18",
-    "executionTime": 6.243
+    "executionTime": 6.18
   },
   {
     "test": "c test 19",
-    "executionTime": 6.243
+    "executionTime": 6.179
   },
   {
     "test": "c test 20",
-    "executionTime": 6.269
+    "executionTime": 6.179
   },
   {
     "test": "d test 16",
-    "executionTime": 8.616
+    "executionTime": 8.301
   },
   {
     "test": "d test 17",
-    "executionTime": 8.2
+    "executionTime": 8.303
   },
   {
     "test": "d test 18",
-    "executionTime": 8.192
+    "executionTime": 8.199
   },
   {
     "test": "d test 19",
-    "executionTime": 8.185
+    "executionTime": 8.181
   },
   {
     "test": "d test 20",
-    "executionTime": 8.211
+    "executionTime": 8.207
   },
   {
     "test": "f test 1",
-    "executionTime": 12.486
+    "executionTime": 12.307
   },
   {
     "test": "f test 2",
-    "executionTime": 12.245
+    "executionTime": 12.19
   },
   {
     "test": "f test 3",
-    "executionTime": 12.234
+    "executionTime": 12.182
   },
   {
     "test": "f test 4",
-    "executionTime": 12.222
+    "executionTime": 12.187
   },
   {
     "test": "f test 5",
-    "executionTime": 12.233
+    "executionTime": 12.193
   },
   {
     "test": "f test 6",
-    "executionTime": 12.223
+    "executionTime": 12.179
   },
   {
     "test": "f test 7",
-    "executionTime": 12.228
+    "executionTime": 12.183
   },
   {
     "test": "f test 8",
-    "executionTime": 12.222
+    "executionTime": 12.267
   },
   {
     "test": "f test 9",
-    "executionTime": 12.23
+    "executionTime": 12.179
   },
   {
     "test": "f test 10",
-    "executionTime": 12.245
+    "executionTime": 12.189
   },
   {
     "test": "f test 11",
-    "executionTime": 12.229
+    "executionTime": 12.253
   },
   {
     "test": "f test 12",
-    "executionTime": 12.212
+    "executionTime": 12.183
   },
   {
     "test": "f test 13",
-    "executionTime": 12.214
+    "executionTime": 12.183
   },
   {
     "test": "f test 14",
-    "executionTime": 12.22
+    "executionTime": 12.181
   },
   {
     "test": "f test 15",
-    "executionTime": 12.216
+    "executionTime": 12.182
   },
   {
     "test": "f test 16",
-    "executionTime": 60.222
+    "executionTime": 60.266
   },
   {
     "test": "f test 17",
-    "executionTime": 60.214
+    "executionTime": 60.343
   },
   {
     "test": "f test 18",
-    "executionTime": 60.326
+    "executionTime": 60.257
   },
   {
     "test": "f test 19",
-    "executionTime": 60.219
+    "executionTime": 60.274
   },
   {
     "test": "f test 20",
-    "executionTime": 60.223
+    "executionTime": 60.266
   },
   {
     "test": "g test 6",
-    "executionTime": 14.347
+    "executionTime": 14.446
   },
   {
     "test": "g test 7",
-    "executionTime": 14.266
+    "executionTime": 14.192
   },
   {
     "test": "g test 8",
-    "executionTime": 14.258
+    "executionTime": 14.188
   },
   {
     "test": "g test 9",
-    "executionTime": 14.251
+    "executionTime": 14.282
   },
   {
     "test": "g test 10",
-    "executionTime": 14.275
+    "executionTime": 14.19
   },
   {
     "test": "g test 11",
-    "executionTime": 14.248
+    "executionTime": 14.231
   },
   {
     "test": "g test 12",
-    "executionTime": 14.243
+    "executionTime": 14.278
   },
   {
     "test": "g test 13",
-    "executionTime": 14.241
+    "executionTime": 14.183
   },
   {
     "test": "g test 14",
-    "executionTime": 14.255
+    "executionTime": 14.269
   },
   {
     "test": "g test 15",
-    "executionTime": 14.252
+    "executionTime": 14.181
   },
   {
     "test": "g test 16",
-    "executionTime": 14.257
+    "executionTime": 14.187
   },
   {
     "test": "g test 17",
-    "executionTime": 14.242
+    "executionTime": 14.277
   },
   {
     "test": "g test 18",
-    "executionTime": 14.237
+    "executionTime": 14.181
   },
   {
     "test": "g test 19",
-    "executionTime": 14.308
+    "executionTime": 14.173
   },
   {
     "test": "g test 20",
-    "executionTime": 14.236
+    "executionTime": 14.181
   },
   {
     "test": "h test 11",
-    "executionTime": 16.944
+    "executionTime": 16.3
   },
   {
     "test": "h test 12",
-    "executionTime": 16.229
+    "executionTime": 16.19
   },
   {
     "test": "h test 13",
-    "executionTime": 16.326
+    "executionTime": 16.185
   },
   {
     "test": "h test 14",
-    "executionTime": 16.216
+    "executionTime": 16.192
   },
   {
     "test": "h test 15",
-    "executionTime": 16.338
+    "executionTime": 16.195
   },
   {
     "test": "h test 16",
-    "executionTime": 16.235
+    "executionTime": 16.196
   },
   {
     "test": "h test 17",
-    "executionTime": 16.323
+    "executionTime": 16.196
   },
   {
     "test": "h test 18",
-    "executionTime": 16.212
+    "executionTime": 16.182
   },
   {
     "test": "h test 19",
-    "executionTime": 16.347
+    "executionTime": 16.196
   },
   {
     "test": "h test 20",
-    "executionTime": 16.225
+    "executionTime": 16.178
   },
   {
     "test": "i test 16",
-    "executionTime": 18.486
+    "executionTime": 18.424
   },
   {
     "test": "i test 17",
-    "executionTime": 18.265
+    "executionTime": 18.296
   },
   {
     "test": "i test 18",
-    "executionTime": 18.233
+    "executionTime": 18.244
   },
   {
     "test": "i test 19",
-    "executionTime": 18.249
+    "executionTime": 18.277
   },
   {
     "test": "i test 20",
-    "executionTime": 18.262
+    "executionTime": 18.253
   }
 ]
