@@ -1,5 +1,5 @@
 import { test, expect, type Page } from "@playwright/test";
-import { measureExecutionTime } from "sharding-pk-play";
+import { recordTestsExecutionTime } from "test-world-pk";
 
 test.beforeEach(async ({ page }, testInfo) => {
   console.log(`Running beforeEach for ${testInfo.title} Before Each`);
@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }, testInfo) => {
 // Define a global afterEach hook
 test.afterEach(async ({ page }, testInfo) => {
   console.log(`Running afterEach for ${testInfo.title} After Each`);
-  measureExecutionTime(testInfo); // Custom function to measure time
+  recordTestsExecutionTime(testInfo); // Custom function to measure time
 });
 
 test.describe("j_1st_describe", () => {
